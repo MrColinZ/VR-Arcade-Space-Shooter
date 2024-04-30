@@ -27,6 +27,7 @@ collision_layer = 2
 collision_mask = 14
 script = ExtResource("2_oa3f7")
 shot_scene = ExtResource("3_y346k")
+points = 10
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = SubResource("CylinderMesh_xpvow")

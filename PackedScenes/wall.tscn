@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgdofur02d5c3"]
+
+[ext_resource type="Material" uid="uid://bdu0gl8vahf1q" path="res://Recources/Materials/GridMaterial.tres" id="1_u4q5p"]
+[ext_resource type="Script" path="res://Scripts/Enemys/walls.gd" id="2_fo056"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6ec4q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_atf2j"]
+size = Vector3(1, 1, 0.0126953)
+
+[node name="WallRight" type="MeshInstance3D"]
+transform = Transform3D(-1.82768e-06, 0, 41.8124, 0, 50.2143, 0, -41.8124, 0, -1.82768e-06, 0, 0, 0)
+mesh = SubResource("QuadMesh_6ec4q")
+surface_material_override/0 = ExtResource("1_u4q5p")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("2_fo056")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.38378e-16, 0, -0.00195311)
+shape = SubResource("BoxShape3D_atf2j")

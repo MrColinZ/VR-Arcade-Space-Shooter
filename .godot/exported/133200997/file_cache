@@ -1,0 +1,16 @@
+res://PackedScenes/Enemys/Enemy1.tscn::787d8a992ec23af8517894b8f7fe0f5d::1714494988::res://.godot/exported/133200997/export-e4f8d992a01d5bb623c55cf66c912e2d-Enemy1.scn
+res://PackedScenes/Enemys/enemy_2.tscn::570683bc3b2fcb3c31a239649165d156::1714494988::res://.godot/exported/133200997/export-d986c2a700e995cdf5f3415e4a78dd6c-enemy_2.scn
+res://PackedScenes/Enemys/Meteor.tscn::2dbe499c042bcd3c48879515cb0a290e::1714494961::res://.godot/exported/133200997/export-34d60f787b7bf8383bfeba217e881c3f-Meteor.scn
+res://PackedScenes/ParentScenes/Entity.tscn::c7f5113d988dafcc9e7dd0da883cce80::1714215935::res://.godot/exported/133200997/export-4474345fe10d329c481986381cca4d22-Entity.scn
+res://PackedScenes/ParentScenes/Shots.tscn::62ab463bd5e345b8c3a28c2562335f3f::1714406936::res://.godot/exported/133200997/export-ffb32f8b349a4d18ea2a1fa2be30c0e6-Shots.scn
+res://PackedScenes/Shots/enemy_shot_1.tscn::5d52919c4d4313410618158e740f8426::1714123099::res://.godot/exported/133200997/export-37987b356773bc02eababf036a97f0ce-enemy_shot_1.scn
+res://PackedScenes/Shots/player_shot_1.tscn::7bdf18e6f88118bf688e395eabc61847::1714215935::res://.godot/exported/133200997/export-7a40292998880c2a671a2df87170f410-player_shot_1.scn
+res://PackedScenes/emty_chunk.tscn::2bb1a4751bcb6182018646bba92e9c79::1714491569::res://.godot/exported/133200997/export-51a3a7817cf1852c64bca3093f6bc8de-emty_chunk.scn
+res://PackedScenes/enemy_1_spawner.tscn::b40b242edbdf98c37b7b24815555cc33::1714207631::res://.godot/exported/133200997/export-d2d217bce6c97167ed73cfab1bf90342-enemy_1_spawner.scn
+res://PackedScenes/meteor_chunk.tscn::c1908a0d52b2817afdf6f82d4de2bffb::1714491569::res://.godot/exported/133200997/export-cbd61b3af0c47a731fb74ce154789b0a-meteor_chunk.scn
+res://PackedScenes/wall.tscn::495a69e417d408e2629488c2fbaded81::1714491569::res://.godot/exported/133200997/export-122ef760157954be13335c28986b987c-wall.scn
+res://PackedScenes/Ship.tscn::ee89b562b21f8dfa486cb54eedec2b69::1714495506::res://.godot/exported/133200997/export-71aa4127c388309a6cc1d468012e54cf-Ship.scn
+res://Recources/Materials/GridMaterial.tres::998045cddf402d9681719b6e568f3534::1714487397::res://.godot/exported/133200997/export-26cdb941b08ae0970cec4e477ea81d85-GridMaterial.res
+res://Scenes/Main.tscn::d2ec67832c188dbb421020bba44ca171::1714495572::res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn
+res://default_bus_layout.tres::36807d69686dec859c4dc0e13bf9721b::1714316772::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://openxr_action_map.tres::2cebdc4bd4f4047978ec06d200940740::1714053252::res://.godot/exported/133200997/export-a9d757fdde490682a87dc1ad8c7d3357-openxr_action_map.res

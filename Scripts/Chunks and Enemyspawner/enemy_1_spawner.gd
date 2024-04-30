@@ -29,7 +29,7 @@ func spawn_enemy(enemy_count):
 		var x_pos = randi_range(20,level_with - 20)
 		
 		enemy.set_position(Vector3(x_pos,y_pos,z_pos))
-		
+		enemy.add_score.connect(get_node("/root/Main/ScoreManager").on_add_score)
 		add_child(enemy)
 		if enemy.has_overlapping_areas():
 			enemy.queue_free()

@@ -38,6 +38,7 @@ func create_level(chunk_length,meteor_count):
 		var meteor = meteor_scene.instantiate()
 		var z_pos = chunk_length/meteor_count * meteors #Distributes the Meteors on z_axis
 		meteor.position = Vector3(randi_range(0,level_with),randi_range(0,level_height),z_pos)
+		meteor.add_score.connect(get_node("/root/Main/ScoreManager").on_add_score)
 		add_child(meteor)
 		if meteor.has_overlapping_areas():
 			meteor.queue_free()

@@ -4,6 +4,7 @@ extends "res://Scripts/Enemys/Entity.gd"
 var rotation_speed_multiplyer = 0.01
 var rotation_speed
 var rotation_angle
+
 func _ready():
 	pass 
 

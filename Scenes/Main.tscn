@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4ygt54d3or1g"]
+[gd_scene load_steps=18 format=3 uid="uid://4ygt54d3or1g"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_onfnt"]
 [ext_resource type="PackedScene" uid="uid://h0ctogrwmi1w" path="res://PackedScenes/Ship.tscn" id="1_pklpr"]
@@ -13,17 +13,18 @@
 [ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd" id="10_4c08n"]
 [ext_resource type="PackedScene" uid="uid://b5kubn5aon20g" path="res://PackedScenes/Enemys/enemy_2.tscn" id="11_wipod"]
 [ext_resource type="Script" path="res://Scripts/SoundtrackPlayer.gd" id="13_m8uve"]
+[ext_resource type="Script" path="res://Scripts/ScoreManager.gd" id="14_awcq8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bh8t"]
 panorama = ExtResource("6_41ej3")
 
-[sub_resource type="Sky" id="Sky_gcviy"]
+[sub_resource type="Sky" id="Sky_ahdk3"]
 sky_material = SubResource("PanoramaSkyMaterial_6bh8t")
 
 [sub_resource type="Environment" id="Environment_egf7b"]
 background_mode = 2
 background_energy_multiplier = 0.66
-sky = SubResource("Sky_gcviy")
+sky = SubResource("Sky_ahdk3")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_onfnt")
@@ -32,7 +33,7 @@ script = ExtResource("1_onfnt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 0)
 
 [node name="XRCamera3D" parent="Ship/XROrigin3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03899, -0.0665279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03899, 0.00950491)
 
 [node name="Healthbar" parent="Ship" index="11"]
 transform = Transform3D(-1, 0, -8.74228e-08, -7.49289e-08, 0.515173, 0.857086, 4.50378e-08, 0.857086, -0.515173, 0, -0.19207, 1.19937)
@@ -104,11 +105,19 @@ script = ExtResource("13_m8uve")
 volume_db = -16.865
 autoplay = true
 
+[node name="ScoreManager" type="Node" parent="." node_paths=PackedStringArray("ship_node")]
+script = ExtResource("14_awcq8")
+ship_node = NodePath("../Ship")
+
+[node name="ScoreUpdater" type="Timer" parent="ScoreManager"]
+autostart = true
+
 [connection signal="player_death" from="Ship" to="." method="_on_ship_player_death"]
 [connection signal="button_pressed" from="Ship/XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="finished" from="SoundtrackPlayer/MusicPlayer" to="SoundtrackPlayer" method="_on_music_player_finished"]
+[connection signal="timeout" from="ScoreManager/ScoreUpdater" to="ScoreManager" method="_on_score_updater_timeout"]
 
 [editable path="Ship"]
 [editable path="Ship/Mesh"]

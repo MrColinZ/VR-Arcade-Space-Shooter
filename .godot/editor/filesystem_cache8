@@ -7,11 +7,11 @@ openxr_action_map.tres::OpenXRActionMap::158849125760934689::1714053252::0::1:::
 EnemyEnter.res::AnimationLibrary::1708700217166123737::1714211127::0::1::::<><>::
 ::res://Externe Saves/::1714486978
 Meteroid.blend::PackedScene::401227062766297493::1714421217::1714486978::1::::<><>::
-::res://PackedScenes/::1714420986
+::res://PackedScenes/::1714487679
 emty_chunk.tscn::PackedScene::4994687901997291065::1714406936::0::1::::<><>::res://Scripts/Chunks and Enemyspawner/EmtyChunk.gd<>uid://bdu0gl8vahf1q::::res://Recources/Materials/GridMaterial.tres
 enemy_1_spawner.tscn::PackedScene::2538588373572188317::1714207631::0::1::::<><>::res://Scripts/Chunks and Enemyspawner/enemy_1_spawner.gd<>uid://jth681ga6qhv::::res://PackedScenes/Enemys/Enemy1.tscn
 meteor_chunk.tscn::PackedScene::1274483255415014222::1714406936::0::1::::<><>::res://Scripts/Chunks and Enemyspawner/MeteorChunk.gd<>uid://p3fa31lut2b3::::res://PackedScenes/Enemys/Meteor.tscn<>uid://bdu0gl8vahf1q::::res://Recources/Materials/GridMaterial.tres
-Ship.tscn::PackedScene::543087458785458954::1714420986::0::1::::<><>::res://Scripts/TestShip.gd<>uid://b3rn1uu2akbuo::::res://PackedScenes/Shots/player_shot_1.tscn<>res://PackedScenes/XROrigin.gd<>uid://nhd28vasq82h::::res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3<>res://Scripts/SoundRandomPichPlayer.gd<>uid://c03sc8swf0een::::res://Recources/Arcade Ship.escn<>uid://cnv1wr2yd0xg3::::res://Recources/Textures/ShipTexture.png<>uid://blxya6mngkihp::::res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav<>uid://b7cqiisimggib::::res://Recources/Textures/Zielkreuz.png<>res://Scripts/Crossair.gd<>uid://co8vg3w64pub7::::res://Recources/Textures/Healthbar Animation/HB1.png<>uid://57h6v3ndj6q8::::res://Recources/Textures/Healthbar Animation/HB2.png<>uid://67ke03cfwg47::::res://Recources/Textures/Healthbar Animation/HB3.png<>uid://damvjb8vtvkbq::::res://Recources/Textures/Healthbar Animation/HB4.png<>uid://bjd1ro2eigxde::::res://Recources/Textures/Healthbar Animation/HB5.png
+Ship.tscn::PackedScene::543087458785458954::1714487759::0::1::::<><>::res://Scripts/TestShip.gd<>uid://b3rn1uu2akbuo::::res://PackedScenes/Shots/player_shot_1.tscn<>res://PackedScenes/XROrigin.gd<>uid://nhd28vasq82h::::res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3<>res://Scripts/SoundRandomPichPlayer.gd<>uid://c03sc8swf0een::::res://Recources/Arcade Ship.escn<>uid://cnv1wr2yd0xg3::::res://Recources/Textures/ShipTexture.png<>uid://blxya6mngkihp::::res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav<>uid://b7cqiisimggib::::res://Recources/Textures/Zielkreuz.png<>res://Scripts/Crossair.gd<>uid://co8vg3w64pub7::::res://Recources/Textures/Healthbar Animation/HB1.png<>uid://57h6v3ndj6q8::::res://Recources/Textures/Healthbar Animation/HB2.png<>uid://67ke03cfwg47::::res://Recources/Textures/Healthbar Animation/HB3.png<>uid://damvjb8vtvkbq::::res://Recources/Textures/Healthbar Animation/HB4.png<>uid://bjd1ro2eigxde::::res://Recources/Textures/Healthbar Animation/HB5.png
 XROrigin.gd::GDScript::-1::1714073083::0::1::::<>XROrigin3D<>::
 ::res://PackedScenes/Enemys/::1714416852
 Enemy1.tscn::PackedScene::671404922339163515::1714215935::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/Enemy1.gd<>uid://gmbalnn87um4::::res://icon.svg<>uid://cfsospt848occ::::res://PackedScenes/Shots/enemy_shot_1.tscn<>uid://ylybpvoilvx6::::res://Animation/EnemyEnter.res
@@ -27,8 +27,8 @@ player_shot_1.tscn::PackedScene::4387639561514757866::1714215935::0::1::::<><>::
 Arcade Ship.escn::PackedScene::6586463274992574205::1714249738::1714249849::1::::<><>::
 ::res://Recources/3DModel/::1714409760
 Meteroid.escn::PackedScene::2176008468758369363::1714409747::1714409760::1::::<><>::
-::res://Recources/Materials/::1714399597
-GridMaterial.tres::StandardMaterial3D::2639804038960807728::1714399597::0::1::::<><>::uid://bvmaoxjd2qwy8::::res://Recources/Textures/grid.png
+::res://Recources/Materials/::1714487397
+GridMaterial.tres::StandardMaterial3D::2639804038960807728::1714487397::0::1::::<><>::uid://bvmaoxjd2qwy8::::res://Recources/Textures/grid.png
 ::res://Recources/Music/::1714406571
 8-bit-air-fight-by_moodmode.mp3::AudioStreamMP3::5324137755861477917::1712690813::1714321967::1::::<><>::
 8-bit-arcade-mode-by_moodlmode.mp3::AudioStreamMP3::2860580419725010517::1712690961::1714322067::1::::<><>::
@@ -56,8 +56,8 @@ HB2.png::CompressedTexture2D::2172206922671237717::1714309780::1714311909::1::::
 HB3.png::CompressedTexture2D::2242529910448903378::1714309805::1714311912::1::::<><>::
 HB4.png::CompressedTexture2D::7185325817603527442::1714309819::1714311915::1::::<><>::
 HB5.png::CompressedTexture2D::3025923187235199286::1714309835::1714311918::1::::<><>::
-::res://Scenes/::1714420986
-Main.tscn::PackedScene::2085421384315292430::1714420986::0::1::::<><>::res://Scripts/Main.gd<>uid://h0ctogrwmi1w::::res://PackedScenes/Ship.tscn<>res://Scripts/Chunk and EnemySpawner Generator/LevelGenerator.gd<>uid://sfms2jukwolq::::res://PackedScenes/meteor_chunk.tscn<>res://Scripts/Chunk and EnemySpawner Generator/MeteorChunkGenerator.gd<>uid://bcfygdv2d5j3b::::res://PackedScenes/enemy_1_spawner.tscn<>uid://v2kqx0vuom2b::::res://Recources/Textures/panorama_image.png<>res://Scripts/Chunk and EnemySpawner Generator/Enemy1SpawnerGenerator.gd<>res://Scripts/Chunk and EnemySpawner Generator/EmtyChunkGenerator.gd<>uid://cdfp1rxvjbd26::::res://PackedScenes/emty_chunk.tscn<>res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd<>uid://b5kubn5aon20g::::res://PackedScenes/Enemys/enemy_2.tscn<>res://Scripts/SoundtrackPlayer.gd
+::res://Scenes/::1714487679
+Main.tscn::PackedScene::2085421384315292430::1714487679::0::1::::<><>::res://Scripts/Main.gd<>uid://h0ctogrwmi1w::::res://PackedScenes/Ship.tscn<>res://Scripts/Chunk and EnemySpawner Generator/LevelGenerator.gd<>uid://sfms2jukwolq::::res://PackedScenes/meteor_chunk.tscn<>res://Scripts/Chunk and EnemySpawner Generator/MeteorChunkGenerator.gd<>uid://bcfygdv2d5j3b::::res://PackedScenes/enemy_1_spawner.tscn<>uid://v2kqx0vuom2b::::res://Recources/Textures/panorama_image.png<>res://Scripts/Chunk and EnemySpawner Generator/Enemy1SpawnerGenerator.gd<>res://Scripts/Chunk and EnemySpawner Generator/EmtyChunkGenerator.gd<>uid://cdfp1rxvjbd26::::res://PackedScenes/emty_chunk.tscn<>res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd<>uid://b5kubn5aon20g::::res://PackedScenes/Enemys/enemy_2.tscn<>res://Scripts/SoundtrackPlayer.gd
 ::res://Scripts/::1714420898
 Crossair.gd::GDScript::-1::1714418606::0::1::::<>Sprite3D<>::
 Main.gd::GDScript::-1::1714420898::0::1::::<>Node<>::

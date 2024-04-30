@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7icqtjxyahi6"]
+
+[ext_resource type="PackedScene" uid="uid://c03sc8swf0een" path="res://Recources/Arcade Ship.escn" id="1_y86m5"]
+[ext_resource type="Texture2D" uid="uid://cnv1wr2yd0xg3" path="res://Recources/Textures/ShipTexture.png" id="2_tg4l7"]
+[ext_resource type="Texture2D" uid="uid://v2kqx0vuom2b" path="res://Recources/Textures/panorama_image.png" id="3_b3pu8"]
+[ext_resource type="PackedScene" uid="uid://p3fa31lut2b3" path="res://PackedScenes/Enemys/Meteor.tscn" id="4_0301r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rv7xn"]
+albedo_texture = ExtResource("2_tg4l7")
+texture_filter = 2
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jk0i6"]
+panorama = ExtResource("3_b3pu8")
+
+[sub_resource type="Sky" id="Sky_gcviy"]
+sky_material = SubResource("PanoramaSkyMaterial_jk0i6")
+
+[sub_resource type="Environment" id="Environment_6pdce"]
+background_mode = 2
+background_energy_multiplier = 0.66
+sky = SubResource("Sky_gcviy")
+
+[node name="PictureScene" type="Node3D"]
+
+[node name="Mesh" parent="." instance=ExtResource("1_y86m5")]
+transform = Transform3D(-1.28949e-08, 0, -0.295, 0, 0.295, 0, 0.295, 0, -1.28949e-08, 0, 0, 0)
+
+[node name="Ship" parent="Mesh" index="0"]
+transform = Transform3D(-0.811719, 0.441663, -0.382162, 0.156797, 0.795103, 0.585856, 0.562608, 0.415628, -0.714652, 6.4981, 0.792507, -8.32103)
+surface_material_override/0 = SubResource("StandardMaterial3D_rv7xn")
+
+[node name="Cube" parent="Mesh" index="1"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 3.84352, -1.28689, -1.68006e-07)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6pdce")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0918007, -0.397581, 6.46653)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.347293, -0.580902, 0.736166, 0.24785, 0.813974, 0.525374, -0.90441, 2.14889e-07, 0.426664, 3.77487, 10.5043, 26.6551)
+shadow_enabled = true
+
+[node name="Meteor" parent="." instance=ExtResource("4_0301r")]
+transform = Transform3D(9.585, 0, 0, 0, 9.585, 0, 0, 0, 9.585, -6.74357, 10.2906, -24.9885)
+
+[node name="Meteor3" parent="." instance=ExtResource("4_0301r")]
+transform = Transform3D(4.58562, 8.41691, 0, -8.41691, 4.58562, 0, 0, 0, 9.585, -42.0184, -3.27694, -41.6857)
+
+[node name="Meteor2" parent="." instance=ExtResource("4_0301r")]
+transform = Transform3D(6.00143, -7.47362, 0, 7.47362, 6.00143, 0, 0, 0, 9.585, -15.6034, -17.0171, -52.2141)
+
+[editable path="Mesh"]

@@ -60,6 +60,7 @@ horizontal_left={
 3d_physics/layer_4="Enemyshots"
 3d_physics/layer_5="Meteor"
 3d_physics/layer_6="Chunk"
+3d_physics/layer_7="Walls"
 
 [rendering]
 

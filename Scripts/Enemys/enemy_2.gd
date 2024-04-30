@@ -30,7 +30,7 @@ func _on_shoot_timer_timeout():
 		var shot = shot_scene.instantiate()
 		shot.position = $Cannon.global_position
 		main_node.add_child(shot)
-		shot.look_at(ship_node.global_position+Vector3(0,0,50))
+		shot.look_at(ship_node.get_node("EnemyAimPoint").global_position)
 		#Aiming a bit in front of the Player for better hitquote
 		
 		shot_count -= 1

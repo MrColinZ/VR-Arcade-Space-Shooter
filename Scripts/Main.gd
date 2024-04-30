@@ -1,6 +1,5 @@
 extends Node
 
-var score = 0
 var player_start_position
 var game_state = "Menu"
 
@@ -27,6 +26,7 @@ func game_over():
 
 func reset_to_menu():
 	game_state = "Menu"
+	$ScoreManager/ScoreUpdater.stop()
 	$CanvasLayer/StartButton.visible = true
 	randomize()
 	$SoundtrackPlayer.play_soundtrack($SoundtrackPlayer.THEMES.MENU,true)
@@ -44,7 +44,7 @@ func reset_to_menu():
 
 
 func new_game(): #Starts New Game
-	score = 0
+	get_node("ScoreManager").reset_score()
 	$Ship.start(player_start_position)
 	randomize()
 	$SoundtrackPlayer.play_soundtrack($SoundtrackPlayer.THEMES.INGAME,true)
