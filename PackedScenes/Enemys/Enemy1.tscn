@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://jth681ga6qhv"]
+
+[ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_s250g"]
+[ext_resource type="Script" path="res://Scripts/Enemys/Enemy1.gd" id="2_o4ijo"]
+[ext_resource type="Texture2D" uid="uid://gmbalnn87um4" path="res://icon.svg" id="3_6t6wm"]
+[ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="3_pt67u"]
+[ext_resource type="AnimationLibrary" uid="uid://ylybpvoilvx6" path="res://Animation/EnemyEnter.res" id="5_s81w1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ky0ff"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihwg6"]
+albedo_texture = ExtResource("3_6t6wm")
+normal_scale = -3.31
+normal_texture = ExtResource("3_6t6wm")
+ao_light_affect = 0.26
+heightmap_enabled = true
+heightmap_scale = 8.09
+heightmap_texture = ExtResource("3_6t6wm")
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+uv1_scale = Vector3(5.09, 5.09, 5.09)
+distance_fade_min_distance = 20.0
+
+[node name="Enemy1" instance=ExtResource("1_s250g")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 30
+script = ExtResource("2_o4ijo")
+shot_scene = ExtResource("3_pt67u")
+health = 2
+
+[node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
+mesh = SubResource("BoxMesh_ky0ff")
+surface_material_override/0 = SubResource("StandardMaterial3D_ihwg6")
+
+[node name="ShootTimer" type="Timer" parent="." index="2"]
+wait_time = 4.555
+autostart = true
+
+[node name="Cannon" type="Node3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0766168, -0.0613226, -0.895951)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": ExtResource("5_s81w1")
+}
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

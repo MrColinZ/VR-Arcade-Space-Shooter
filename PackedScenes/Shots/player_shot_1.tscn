@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3rn1uu2akbuo"]
+
+[ext_resource type="PackedScene" uid="uid://48l8f07sq2q0" path="res://PackedScenes/ParentScenes/Shots.tscn" id="1_s1toy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkm2b"]
+shading_mode = 0
+albedo_color = Color(1, 0.337255, 0.0392157, 1)
+
+[node name="PlayerShot1" instance=ExtResource("1_s1toy")]
+move_speed = 200
+
+[node name="MeshInstance3D" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kkm2b")
+
+[node name="OmniLight3D" parent="." index="2"]
+light_color = Color(0.878431, 0.419608, 0.211765, 1)

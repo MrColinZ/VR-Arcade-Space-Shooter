@@ -1,0 +1,15 @@
+Label3D
+Node
+AnimatedSprite3D
+Sprite3D
+Timer
+AnimationPlayer
+Marker3D
+Node3D
+MeshInstance3D
+AudioStreamPlayer3D
+GPUParticles3D
+GPUParticlesAttractorSphere3D
+XRController3D
+XRCamera3D
+XROrigin3D

@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8lane8pvkuhl"]
+
+[ext_resource type="Script" path="res://Scripts/Enemys/Entity.gd" id="1_e5yly"]
+[ext_resource type="AudioStream" uid="uid://krc758qhj0us" path="res://Recources/Soundeffects/mixkit-arcade-game-explosion-1699.wav" id="2_euo15"]
+[ext_resource type="Script" path="res://Scripts/SoundRandomPichPlayer.gd" id="3_l2ewu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jv8ja"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_su2nk"]
+
+[sub_resource type="Curve" id="Curve_ykja2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bfkfu"]
+curve = SubResource("Curve_ykja2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wsm2m"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_bfkfu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1s8m"]
+albedo_color = Color(1, 0.419608, 0.160784, 1)
+emission_enabled = true
+emission = Color(0.709804, 0.356863, 0, 1)
+emission_energy_multiplier = 3.55
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_11t6y"]
+material = SubResource("StandardMaterial3D_m1s8m")
+top_radius = 0.3
+bottom_radius = 0.0
+height = 3.0
+
+[node name="Entity" type="Area3D" groups=["Enemys"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_e5yly")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_jv8ja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_su2nk")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 24
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_wsm2m")
+draw_pass_1 = SubResource("CylinderMesh_11t6y")
+
+[node name="ExplosionSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_euo15")
+script = ExtResource("3_l2ewu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

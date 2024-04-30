@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5vmuqpse1s1o"
+path="res://.godot/imported/Calm Cosmos  Free Music [Royalty Free No Copyright].mp3-62b97044361c861f66a6233031f4b0c3.mp3str"
+
+[deps]
+
+source_file="res://Recources/Music/Calm Cosmos  Free Music [Royalty Free No Copyright].mp3"
+dest_files=["res://.godot/imported/Calm Cosmos  Free Music [Royalty Free No Copyright].mp3-62b97044361c861f66a6233031f4b0c3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

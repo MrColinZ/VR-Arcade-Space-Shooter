@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cycihsgqo5f7g"
+path="res://.godot/imported/cruising-down-8bit-lane-by Monument_music.mp3-1914b0c59c043c9b70700a11fbe7dc84.mp3str"
+
+[deps]
+
+source_file="res://Recources/Music/cruising-down-8bit-lane-by Monument_music.mp3"
+dest_files=["res://.godot/imported/cruising-down-8bit-lane-by Monument_music.mp3-1914b0c59c043c9b70700a11fbe7dc84.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

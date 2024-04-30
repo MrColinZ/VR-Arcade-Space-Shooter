@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdfp1rxvjbd26"]
+
+[ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/EmtyChunk.gd" id="1_p78ye"]
+[ext_resource type="Material" uid="uid://bdu0gl8vahf1q" path="res://Recources/Materials/GridMaterial.tres" id="2_nc6t0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4eiav"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6ec4q"]
+
+[node name="EmtyChunk" type="Node3D" groups=["Chunks"]]
+script = ExtResource("1_p78ye")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_4eiav")
+
+[node name="WallRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.82768e-06, 0, 41.8124, 0, 50.2143, 0, -41.8124, 0, -1.82768e-06, 0, 0, 0)
+mesh = SubResource("QuadMesh_6ec4q")
+surface_material_override/0 = ExtResource("2_nc6t0")
+
+[node name="WallLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.82768e-06, 0, -41.8124, 0, 50.688, 0, 41.8124, 0, -1.82768e-06, 0, 0, 0)
+mesh = SubResource("QuadMesh_6ec4q")
+surface_material_override/0 = ExtResource("2_nc6t0")
+
+[node name="WallUp" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.82768e-06, 45.9596, -1.82768e-06, 0, -2.00896e-06, -41.8124, -41.8124, -2.00896e-06, 7.98904e-14, 0, 0, 0)
+mesh = SubResource("QuadMesh_6ec4q")
+surface_material_override/0 = ExtResource("2_nc6t0")
+
+[node name="WallDown" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.82768e-06, -41.8124, -1.82768e-06, 0, -1.82768e-06, 41.8124, -41.8124, 1.82768e-06, 7.98904e-14, 0, 0, 0)
+mesh = SubResource("QuadMesh_6ec4q")
+surface_material_override/0 = ExtResource("2_nc6t0")
