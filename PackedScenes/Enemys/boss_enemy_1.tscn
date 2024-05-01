@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=3 uid="uid://e3bo7qvxy5ww"]
+
+[ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_waqsj"]
+[ext_resource type="Script" path="res://Scripts/Enemys/BossEnemy1.gd" id="2_x8xvt"]
+[ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="3_uhclw"]
+[ext_resource type="Texture2D" uid="uid://m0f2pf0xvsqk" path="res://Recources/Textures/image (17).png" id="3_uix5s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ldmg"]
+albedo_texture = ExtResource("3_uix5s")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_diwig"]
+material = SubResource("StandardMaterial3D_0ldmg")
+top_radius = 2.255
+bottom_radius = 3.132
+height = 2.877
+radial_segments = 13
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tsnsp"]
+height = 12.932
+radius = 12.0456
+
+[sub_resource type="Animation" id="Animation_afvih"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_stpgc"]
+resource_name = "move_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10, -10, 0), Vector3(10, -10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bjraw"]
+resource_name = "move_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(10, 10, 0), Vector3(-10, 10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wewgh"]
+resource_name = "move_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10, 10, 0), Vector3(-10, -10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l34ri"]
+resource_name = "move_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(10, -10, 0), Vector3(10, 10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xlkvh"]
+resource_name = "entry"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(121.483, 10, 0), Vector3(10, 10, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f85k"]
+_data = {
+"RESET": SubResource("Animation_afvih"),
+"entry": SubResource("Animation_xlkvh"),
+"move_down": SubResource("Animation_wewgh"),
+"move_left": SubResource("Animation_stpgc"),
+"move_right": SubResource("Animation_bjraw"),
+"move_up": SubResource("Animation_l34ri")
+}
+
+[node name="BossEnemy1" instance=ExtResource("1_waqsj")]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("2_x8xvt")
+shot_scene = ExtResource("3_uhclw")
+health = 20
+
+[node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(4.25, 0, 0, 0, 4.25, 0, 0, 0, 4.25, 0, 0, 0)
+mesh = SubResource("CylinderMesh_diwig")
+
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("CylinderShape3D_tsnsp")
+
+[node name="PositionChange" type="Timer" parent="." index="4"]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_5f85k")
+}
+
+[node name="Cannon" type="Marker3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.5736)
+
+[node name="ShootTimer" type="Timer" parent="." index="7"]
+wait_time = 0.1
+
+[node name="ReloadTimer" type="Timer" parent="." index="8"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="PositionChange" to="." method="_on_position_change_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

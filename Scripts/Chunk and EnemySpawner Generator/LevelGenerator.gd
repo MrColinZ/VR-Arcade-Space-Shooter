@@ -1,6 +1,5 @@
 extends Node3D
 
-@export var meteor_chunk_scene: PackedScene
 
 @export var ship_node: Node
 @export var chunk_length = 200
@@ -8,7 +7,7 @@ extends Node3D
 @export var level_height = 100
 @export var difficulty_increase = 0.05 #Difficulty increase per Chunk creation
 
-
+var spawn_state = "normal"
 var chunk_count = 0 
 var next_position = Vector3(0,0,0) 
 var difficulty = 1
@@ -30,12 +29,13 @@ func reset():
 	chunk_count = 0
 	next_position = Vector3.ZERO
 	difficulty = 1
+	spawn_state = "normal"
 
 
 #Gets called when a new Chunk needs to be generated.
 func new_chunk():
 	#Chunk Types: 0=Emty, 1=Meteor
-	#Enemy Types: 0=none, 1=Stationary
+	#Enemy Types: 0=none, 1=Stationary 2=MovingEnemy, 100=BossEnemy1
 	
 	var next_chunk_type
 	if chunk_count == 0:
@@ -45,12 +45,16 @@ func new_chunk():
 	
 	
 	var next_enemy_type
-	if chunk_count < 5:
-		next_enemy_type = 0
-	if chunk_count > 5:
-		next_enemy_type = 1
-	if chunk_count > 10:
-		next_enemy_type = randi_range(1,2)
+	if spawn_state == "normal":
+		if chunk_count < 5:
+			next_enemy_type = 0
+		if chunk_count > 5:
+			next_enemy_type = 1
+		if chunk_count > 10:
+			next_enemy_type = randi_range(1,2)
+		if chunk_count == 10:
+			spawn_state = "boss"
+			next_enemy_type = 100
 	
 	
 	if next_chunk_type == 0:
@@ -65,13 +69,17 @@ func new_chunk():
 	if next_enemy_type == 2:
 		$Enemy2Spawner.spawn_enemy()
 	
+	if next_enemy_type == 100:
+		$BossEnemy1Spawner.spawn_enemy()
+		
 	chunk_count += 1
 	next_position = Vector3(0,0,next_position.z + chunk_length)#Set Position for next Chunk
 	
 	difficulty = 1.0 + float(chunk_count) * difficulty_increase
 
 
-
+func reset_spawnstate():
+	spawn_state = "normal"
 
 
 

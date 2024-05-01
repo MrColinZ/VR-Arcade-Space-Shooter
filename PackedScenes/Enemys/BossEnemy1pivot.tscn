@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://826s05k1jdv4"]
+
+[ext_resource type="PackedScene" uid="uid://e3bo7qvxy5ww" path="res://PackedScenes/Enemys/boss_enemy_1.tscn" id="1_bhsnb"]
+
+[node name="BossEnemy1Pivot" type="Node3D"]
+
+[node name="BossEnemy1" parent="." instance=ExtResource("1_bhsnb")]

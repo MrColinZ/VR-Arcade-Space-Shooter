@@ -1,15 +1,14 @@
+Marker3D
 Camera3D
+AnimationPlayer
 Timer
 Node
-Marker3D
 CollisionShape3D
 Area3D
 Label3D
 AnimatedSprite3D
 Sprite3D
-AnimationPlayer
 Node3D
 MeshInstance3D
 AudioStreamPlayer3D
 GPUParticles3D
-GPUParticlesAttractorSphere3D

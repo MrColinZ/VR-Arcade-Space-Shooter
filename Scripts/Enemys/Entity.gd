@@ -5,6 +5,7 @@ extends Area3D
 @export var points = 5
 var can_shoot = true
 signal add_score(int)
+signal defeat()
 
 func _ready():
 	
@@ -21,6 +22,7 @@ func _on_area_entered(body):
 	health -= body.damage
 	if health <= 0:
 		add_score.emit(points)
+		defeat.emit()
 		$ExplosionSound.play_random_pitch(0.47)
 		$MeshInstance3D.queue_free()
 		$CollisionShape3D.queue_free()
