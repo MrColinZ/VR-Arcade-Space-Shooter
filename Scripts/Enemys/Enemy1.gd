@@ -15,7 +15,7 @@ func _ready():
 		$AnimationPlayer.play("Enter from right")
 
 func _process(_delta):
-	pass
+	look_at(ship_node.global_position)
 	
 	
 #Creates a new Shot on Timer timeout and shoot it towards the Player

@@ -1,24 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714563498
+::res://::1714579364
 default_bus_layout.tres::AudioBusLayout::8842884073349461612::1714316772::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1714495595::0::1::::<><>::
 icon.svg::CompressedTexture2D::445966910345027957::1712690869::1714210288::1::::<><>::
 openxr_action_map.tres::OpenXRActionMap::158849125760934689::1714053252::0::1::::<><>::
 ::res://Animation/::1714211127
 EnemyEnter.res::AnimationLibrary::1708700217166123737::1714211127::0::1::::<><>::
-::res://Externe Saves/::1714486978
+::res://Externe Saves/::1714589327
+Enemy1.blend::PackedScene::1550124799898073255::1714589327::1714589348::1::::<><>::
 Meteroid.blend::PackedScene::401227062766297493::1714421217::1714486978::1::::<><>::
-::res://PackedScenes/::1714563358
+::res://PackedScenes/::1714586827
 emty_chunk.tscn::PackedScene::4994687901997291065::1714491569::0::1::::<><>::res://Scripts/Chunks and Enemyspawner/EmtyChunk.gd<>uid://bgdofur02d5c3::::res://PackedScenes/wall.tscn
 enemy_1_spawner.tscn::PackedScene::2538588373572188317::1714207631::0::1::::<><>::res://Scripts/Chunks and Enemyspawner/enemy_1_spawner.gd<>uid://jth681ga6qhv::::res://PackedScenes/Enemys/Enemy1.tscn
 meteor_chunk.tscn::PackedScene::1274483255415014222::1714491569::0::1::::<><>::res://Scripts/Chunks and Enemyspawner/MeteorChunk.gd<>uid://p3fa31lut2b3::::res://PackedScenes/Enemys/Meteor.tscn<>uid://bgdofur02d5c3::::res://PackedScenes/wall.tscn
-Ship.tscn::PackedScene::543087458785458954::1714563358::0::1::::<><>::res://Scripts/TestShip.gd<>uid://b3rn1uu2akbuo::::res://PackedScenes/Shots/player_shot_1.tscn<>res://Scripts/XROrigin.gd<>uid://nhd28vasq82h::::res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3<>res://Scripts/SoundRandomPichPlayer.gd<>uid://c03sc8swf0een::::res://Recources/Arcade Ship.escn<>uid://cnv1wr2yd0xg3::::res://Recources/Textures/ShipTexture.png<>uid://blxya6mngkihp::::res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav<>uid://b7cqiisimggib::::res://Recources/Textures/Zielkreuz.png<>res://Scripts/Crossair.gd<>uid://co8vg3w64pub7::::res://Recources/Textures/Healthbar Animation/HB1.png<>uid://57h6v3ndj6q8::::res://Recources/Textures/Healthbar Animation/HB2.png<>uid://67ke03cfwg47::::res://Recources/Textures/Healthbar Animation/HB3.png<>uid://damvjb8vtvkbq::::res://Recources/Textures/Healthbar Animation/HB4.png<>uid://bjd1ro2eigxde::::res://Recources/Textures/Healthbar Animation/HB5.png
+Ship.tscn::PackedScene::543087458785458954::1714586827::0::1::::<><>::res://Scripts/TestShip.gd<>uid://b3rn1uu2akbuo::::res://PackedScenes/Shots/player_shot_1.tscn<>res://Scripts/XROrigin.gd<>uid://nhd28vasq82h::::res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3<>res://Scripts/SoundRandomPichPlayer.gd<>uid://c03sc8swf0een::::res://Recources/Arcade Ship.escn<>uid://cnv1wr2yd0xg3::::res://Recources/Textures/ShipTexture.png<>uid://blxya6mngkihp::::res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav<>uid://b7cqiisimggib::::res://Recources/Textures/Zielkreuz.png<>res://Scripts/Crossair.gd<>uid://co8vg3w64pub7::::res://Recources/Textures/Healthbar Animation/HB1.png<>uid://57h6v3ndj6q8::::res://Recources/Textures/Healthbar Animation/HB2.png<>uid://67ke03cfwg47::::res://Recources/Textures/Healthbar Animation/HB3.png<>uid://damvjb8vtvkbq::::res://Recources/Textures/Healthbar Animation/HB4.png<>uid://bjd1ro2eigxde::::res://Recources/Textures/Healthbar Animation/HB5.png
 wall.tscn::PackedScene::2814606923552526976::1714491569::0::1::::<><>::uid://bdu0gl8vahf1q::::res://Recources/Materials/GridMaterial.tres<>res://Scripts/Enemys/walls.gd
-::res://PackedScenes/Enemys/::1714563358
-boss_enemy_1.tscn::PackedScene::338645376223171914::1714563358::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/BossEnemy1.gd<>uid://m0f2pf0xvsqk::::res://Recources/Textures/image (17).png
-Enemy1.tscn::PackedScene::671404922339163515::1714494988::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/Enemy1.gd<>uid://gmbalnn87um4::::res://icon.svg<>uid://cfsospt848occ::::res://PackedScenes/Shots/enemy_shot_1.tscn<>uid://ylybpvoilvx6::::res://Animation/EnemyEnter.res
-enemy_2.tscn::PackedScene::4513946625190840588::1714494988::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/enemy_2.gd<>uid://gmbalnn87um4::::res://icon.svg<>uid://cfsospt848occ::::res://PackedScenes/Shots/enemy_shot_1.tscn<>uid://ylybpvoilvx6::::res://Animation/EnemyEnter.res
-Meteor.tscn::PackedScene::1110940327994005090::1714494961::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/Meteor.gd<>uid://6acsobskqhax::::res://Recources/3DModel/Meteroid.escn<>uid://2vmng1m18ipm::::res://Recources/Textures/MeteroidTexture.png
+::res://PackedScenes/Enemys/::1714588443
+BossEnemy1pivot.tscn::PackedScene::2373885770398074139::1714585939::0::1::::<><>::uid://e3bo7qvxy5ww::::res://PackedScenes/Enemys/boss_enemy_1.tscn
+boss_enemy_1.tscn::PackedScene::338645376223171914::1714567192::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/BossEnemy1.gd<>uid://cfsospt848occ::::res://PackedScenes/Shots/enemy_shot_1.tscn<>uid://m0f2pf0xvsqk::::res://Recources/Textures/image (17).png
+Enemy1.tscn::PackedScene::671404922339163515::1714588443::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/Enemy1.gd<>uid://gmbalnn87um4::::res://icon.svg<>uid://cfsospt848occ::::res://PackedScenes/Shots/enemy_shot_1.tscn<>uid://c6juktoyuatfg::::res://Recources/3DModel/Enemy1_mesh.escn<>uid://ylybpvoilvx6::::res://Animation/EnemyEnter.res<>uid://nppo67darwr::::res://Recources/Materials/Enemy1_mat.tres
+enemy_2.tscn::PackedScene::4513946625190840588::1714586827::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/enemy_2.gd<>uid://gmbalnn87um4::::res://icon.svg<>uid://cfsospt848occ::::res://PackedScenes/Shots/enemy_shot_1.tscn<>uid://ylybpvoilvx6::::res://Animation/EnemyEnter.res
+Meteor.tscn::PackedScene::1110940327994005090::1714585939::0::1::::<><>::uid://b8lane8pvkuhl::::res://PackedScenes/ParentScenes/Entity.tscn<>res://Scripts/Enemys/Meteor.gd<>uid://6acsobskqhax::::res://Recources/3DModel/Meteroid.escn<>uid://2vmng1m18ipm::::res://Recources/Textures/MeteroidTexture.png<>uid://di1u7ih37ws88::::res://Recources/Textures/MeteroidTexture_n.png
 ::res://PackedScenes/ParentScenes/::1714406936
 Entity.tscn::PackedScene::4725384156145548041::1714215935::0::1::::<><>::res://Scripts/Enemys/Entity.gd<>uid://krc758qhj0us::::res://Recources/Soundeffects/mixkit-arcade-game-explosion-1699.wav<>res://Scripts/SoundRandomPichPlayer.gd
 Shots.tscn::PackedScene::2104328052221713797::1714406936::0::1::::<><>::res://Scripts/Shot.gd<>uid://45cxywypncof::::res://Recources/Soundeffects/mixkit-space-impact-774.wav<>res://Scripts/SoundRandomPichPlayer.gd
@@ -27,10 +29,12 @@ enemy_shot_1.tscn::PackedScene::5161827386079430710::1714123099::0::1::::<><>::u
 player_shot_1.tscn::PackedScene::4387639561514757866::1714215935::0::1::::<><>::uid://48l8f07sq2q0::::res://PackedScenes/ParentScenes/Shots.tscn
 ::res://Recources/::1714408716
 Arcade Ship.escn::PackedScene::6586463274992574205::1714249738::1714249849::1::::<><>::
-::res://Recources/3DModel/::1714409760
+::res://Recources/3DModel/::1714585471
+Enemy1_mesh.escn::PackedScene::6968508138434235836::1714585468::1714585471::1::::<><>::
 Meteroid.escn::PackedScene::2176008468758369363::1714409747::1714409760::1::::<><>::
-::res://Recources/Materials/::1714555120
-GridMaterial.tres::StandardMaterial3D::2639804038960807728::1714555120::0::1::::<><>::uid://bvmaoxjd2qwy8::::res://Recources/Textures/grid.png
+::res://Recources/Materials/::1714588443
+GridMaterial.tres::StandardMaterial3D::2639804038960807728::1714579597::0::1::::<><>::uid://bvmaoxjd2qwy8::::res://Recources/Textures/grid.png
+Enemy1_mat.tres::StandardMaterial3D::27775237276649393::1714588443::0::1::::<><>::uid://bjwx0t2apfid::::res://Recources/Textures/Enemy1_tex.png<>uid://b75hid2xxaipu::::res://Recources/Textures/Enemy1_tex_n.png
 ::res://Recources/Music/::1714406571
 8-bit-air-fight-by_moodmode.mp3::AudioStreamMP3::5324137755861477917::1712690813::1714321967::1::::<><>::
 8-bit-arcade-mode-by_moodlmode.mp3::AudioStreamMP3::2860580419725010517::1712690961::1714322067::1::::<><>::
@@ -45,10 +49,13 @@ mixkit-blast-hit-with-echo-2186.wav::AudioStreamWAV::3207437507241815789::171412
 mixkit-space-impact-774.wav::AudioStreamWAV::2097571601027187521::1714119410::1714119456::1::::<><>::
 mixkit-typewriter-hit-1362.wav::AudioStreamWAV::6004465125772010239::1714074476::1714074481::1::::<><>::
 sci-fi-energy-gun-39409.mp3::AudioStreamMP3::927137744722740481::1713384880::1713385824::1::::<><>::
-::res://Recources/Textures/::1714409138
+::res://Recources/Textures/::1714585687
+Enemy1_tex.png::CompressedTexture2D::90146434187634751::1714584163::1714585687::1::::<><>::
+Enemy1_tex_n.png::CompressedTexture2D::4694834518388064962::1714584226::1714585683::1::::<><>::
 grid.png::CompressedTexture2D::3885185156368502521::1714314249::1714314383::1::::<><>::
 image (17).png::CompressedTexture2D::894228165648889834::1713645411::1713645511::1::::<><>::
 MeteroidTexture.png::CompressedTexture2D::1939202886182383186::1714408636::1714409138::1::::<><>::
+MeteroidTexture_n.png::CompressedTexture2D::7775718539365675707::1714579518::1714579550::1::::<><>::
 panorama_image.png::CompressedTexture2D::1530340906027036375::1713723520::1713723693::1::::<><>::
 ShipTexture.png::CompressedTexture2D::5730267132495854460::1714249987::1714249995::1::::<><>::
 Zielkreuz.png::CompressedTexture2D::4637578642226802585::1714297370::1714297525::1::::<><>::
@@ -58,9 +65,8 @@ HB2.png::CompressedTexture2D::2172206922671237717::1714309780::1714311909::1::::
 HB3.png::CompressedTexture2D::2242529910448903378::1714309805::1714311912::1::::<><>::
 HB4.png::CompressedTexture2D::7185325817603527442::1714309819::1714311915::1::::<><>::
 HB5.png::CompressedTexture2D::3025923187235199286::1714309835::1714311918::1::::<><>::
-::res://Scenes/::1714563498
-BossEnemy1pivot.tscn::PackedScene::2373885770398074139::1714563359::0::1::::<><>::uid://e3bo7qvxy5ww::::res://PackedScenes/Enemys/boss_enemy_1.tscn
-Main.tscn::PackedScene::2085421384315292430::1714563358::0::1::::<><>::res://Scripts/Main.gd<>uid://h0ctogrwmi1w::::res://PackedScenes/Ship.tscn<>res://Scripts/Chunk and EnemySpawner Generator/LevelGenerator.gd<>uid://sfms2jukwolq::::res://PackedScenes/meteor_chunk.tscn<>res://Scripts/Chunk and EnemySpawner Generator/MeteorChunkGenerator.gd<>uid://bcfygdv2d5j3b::::res://PackedScenes/enemy_1_spawner.tscn<>uid://v2kqx0vuom2b::::res://Recources/Textures/panorama_image.png<>res://Scripts/Chunk and EnemySpawner Generator/Enemy1SpawnerGenerator.gd<>res://Scripts/Chunk and EnemySpawner Generator/EmtyChunkGenerator.gd<>uid://cdfp1rxvjbd26::::res://PackedScenes/emty_chunk.tscn<>res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd<>uid://b5kubn5aon20g::::res://PackedScenes/Enemys/enemy_2.tscn<>res://Scripts/SoundtrackPlayer.gd<>res://Scripts/ScoreManager.gd
+::res://Scenes/::1714588451
+Main.tscn::PackedScene::2085421384315292430::1714588451::0::1::::<><>::res://Scripts/Main.gd<>uid://h0ctogrwmi1w::::res://PackedScenes/Ship.tscn<>res://Scripts/Chunk and EnemySpawner Generator/LevelGenerator.gd<>uid://sfms2jukwolq::::res://PackedScenes/meteor_chunk.tscn<>res://Scripts/Chunk and EnemySpawner Generator/MeteorChunkGenerator.gd<>uid://bcfygdv2d5j3b::::res://PackedScenes/enemy_1_spawner.tscn<>uid://v2kqx0vuom2b::::res://Recources/Textures/panorama_image.png<>res://Scripts/Chunk and EnemySpawner Generator/Enemy1SpawnerGenerator.gd<>res://Scripts/Chunk and EnemySpawner Generator/EmtyChunkGenerator.gd<>uid://cdfp1rxvjbd26::::res://PackedScenes/emty_chunk.tscn<>res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd<>uid://b5kubn5aon20g::::res://PackedScenes/Enemys/enemy_2.tscn<>res://Scripts/Chunks and Enemyspawner/BossEnemy1Spawner.gd<>uid://826s05k1jdv4::::res://PackedScenes/Enemys/BossEnemy1pivot.tscn<>res://Scripts/SoundtrackPlayer.gd<>res://Scripts/ScoreManager.gd
 picture_scene.tscn::PackedScene::4649129721754614507::1714562379::0::1::::<><>::uid://c03sc8swf0een::::res://Recources/Arcade Ship.escn<>uid://cnv1wr2yd0xg3::::res://Recources/Textures/ShipTexture.png<>uid://v2kqx0vuom2b::::res://Recources/Textures/panorama_image.png<>uid://p3fa31lut2b3::::res://PackedScenes/Enemys/Meteor.tscn
 ::res://Scripts/::1714494746
 Crossair.gd::GDScript::-1::1714418606::0::1::::<>Sprite3D<>::
@@ -72,20 +78,21 @@ SoundRandomPichPlayer.gd::GDScript::-1::1713797051::0::1::::<>AudioStreamPlayer3
 SoundtrackPlayer.gd::GDScript::-1::1714420058::0::1::::SOUNDTRACKPLAYER_CLASS<>Node<>::
 TestShip.gd::GDScript::-1::1714420376::0::1::::<>Area3D<>::
 XROrigin.gd::GDScript::-1::1714487786::0::1::::<>XROrigin3D<>::
-::res://Scripts/Chunk and EnemySpawner Generator/::1714562245
+::res://Scripts/Chunk and EnemySpawner Generator/::1714588443
 EmtyChunkGenerator.gd::GDScript::-1::1714207972::0::1::::<>Node<>::
 Enemy1SpawnerGenerator.gd::GDScript::-1::1714209535::0::1::::<>Node<>::
-LevelGenerator.gd::GDScript::-1::1714562245::0::1::::<>Node3D<>::
+LevelGenerator.gd::GDScript::-1::1714588443::0::1::::<>Node3D<>::
 MeteorChunkGenerator.gd::GDScript::-1::1714207258::0::1::::<>Node<>::
-::res://Scripts/Chunks and Enemyspawner/::1714494938
+::res://Scripts/Chunks and Enemyspawner/::1714566408
+BossEnemy1Spawner.gd::GDScript::-1::1714566408::0::1::::<>Node<>::
 EmtyChunk.gd::GDScript::-1::1714207340::0::1::::<>Node3D<>::
 Enemy2Spawner.gd::GDScript::-1::1714494938::0::1::::<>Node<>::
 enemy_1_spawner.gd::GDScript::-1::1714493241::0::1::::<>Node3D<>::
 MeteorChunk.gd::GDScript::-1::1714494928::0::1::::<>Node3D<>::
-::res://Scripts/Enemys/::1714563358
-BossEnemy1.gd::GDScript::-1::1714563358::0::1::::<>Area3D<>::
-Enemy1.gd::GDScript::-1::1714492451::0::1::::<>Area3D<>::
+::res://Scripts/Enemys/::1714586635
+BossEnemy1.gd::GDScript::-1::1714567068::0::1::::<>Area3D<>::
+Enemy1.gd::GDScript::-1::1714586635::0::1::::<>Area3D<>::
 enemy_2.gd::GDScript::-1::1714491569::0::1::::<>Area3D<>::
-Entity.gd::GDScript::-1::1714493339::0::1::::<>Area3D<>::
+Entity.gd::GDScript::-1::1714565076::0::1::::<>Area3D<>::
 Meteor.gd::GDScript::-1::1714494847::0::1::::<>Area3D<>::
 walls.gd::GDScript::-1::1714489360::0::1::::<>Area3D<>::

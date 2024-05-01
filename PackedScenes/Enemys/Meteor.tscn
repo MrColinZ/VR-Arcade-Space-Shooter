@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://p3fa31lut2b3"]
+[gd_scene load_steps=7 format=3 uid="uid://p3fa31lut2b3"]
 
 [ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_6aaek"]
 [ext_resource type="Script" path="res://Scripts/Enemys/Meteor.gd" id="1_sqfj8"]
 [ext_resource type="PackedScene" uid="uid://6acsobskqhax" path="res://Recources/3DModel/Meteroid.escn" id="3_jfndn"]
 [ext_resource type="Texture2D" uid="uid://2vmng1m18ipm" path="res://Recources/Textures/MeteroidTexture.png" id="4_l6qcj"]
+[ext_resource type="Texture2D" uid="uid://di1u7ih37ws88" path="res://Recources/Textures/MeteroidTexture_n.png" id="5_o2d83"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxgyd"]
 albedo_texture = ExtResource("4_l6qcj")
 metallic = 0.32
-normal_scale = -0.57
-normal_texture = ExtResource("4_l6qcj")
+normal_enabled = true
+normal_texture = ExtResource("5_o2d83")
 rim_tint = 1.0
 ao_light_affect = 0.43
 ao_texture = ExtResource("4_l6qcj")

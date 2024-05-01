@@ -52,7 +52,7 @@ func new_chunk():
 			next_enemy_type = 1
 		if chunk_count > 10:
 			next_enemy_type = randi_range(1,2)
-		if chunk_count == 10:
+		if chunk_count == 20:
 			spawn_state = "boss"
 			next_enemy_type = 100
 	

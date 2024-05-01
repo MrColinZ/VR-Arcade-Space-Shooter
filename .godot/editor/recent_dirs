@@ -1,3 +1,5 @@
+res://Recources/Textures
+res://Recources/Materials
 res://Scripts/Chunks and Enemyspawner
 res://Scenes
 res://PackedScenes/Enemys
@@ -5,8 +7,6 @@ res://Scripts/Enemys
 H:/Eigene Games/VR Aracade Space Shooter/TestVersion0.1
 res://Scripts
 res://PackedScenes
-res://Recources/Textures
-res://Recources/Materials
 res://PackedScenes/Shots
 res://Animation
 res://
