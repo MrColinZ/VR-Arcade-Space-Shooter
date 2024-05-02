@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://48l8f07sq2q0"]
 
-[ext_resource type="Script" path="res://Scripts/Shot.gd" id="1_8r4g0"]
+[ext_resource type="Script" path="res://Scripts/Enemys/Shot.gd" id="1_8r4g0"]
 [ext_resource type="AudioStream" uid="uid://45cxywypncof" path="res://Recources/Soundeffects/mixkit-space-impact-774.wav" id="2_orh2j"]
 [ext_resource type="Script" path="res://Scripts/SoundRandomPichPlayer.gd" id="3_riha5"]
 

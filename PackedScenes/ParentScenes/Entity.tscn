@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8lane8pvkuhl"]
+[gd_scene load_steps=13 format=3 uid="uid://b8lane8pvkuhl"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/Entity.gd" id="1_e5yly"]
 [ext_resource type="AudioStream" uid="uid://krc758qhj0us" path="res://Recources/Soundeffects/mixkit-arcade-game-explosion-1699.wav" id="2_euo15"]
 [ext_resource type="Script" path="res://Scripts/SoundRandomPichPlayer.gd" id="3_l2ewu"]
+[ext_resource type="Script" path="res://Scripts/Enemys/Cannon.gd" id="4_h8yjq"]
+[ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="5_fkyrr"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_jv8ja"]
 
@@ -60,4 +62,16 @@ draw_pass_1 = SubResource("CylinderMesh_11t6y")
 stream = ExtResource("2_euo15")
 script = ExtResource("3_l2ewu")
 
+[node name="Cannon" type="Marker3D" parent="." node_paths=PackedStringArray("entity")]
+script = ExtResource("4_h8yjq")
+shot_scene = ExtResource("5_fkyrr")
+entity = NodePath("..")
+
+[node name="ShootTimer" type="Timer" parent="Cannon"]
+
+[node name="ReloadTimer" type="Timer" parent="Cannon"]
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Cannon/ShootTimer" to="Cannon" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="Cannon/ReloadTimer" to="Cannon" method="_on_reload_timer_timeout"]

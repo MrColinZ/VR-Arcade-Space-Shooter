@@ -3,7 +3,7 @@ extends Area3D
 @export var damage = 10
 @export var health = 5
 @export var points = 5
-var can_shoot = true
+@export var can_shoot = true
 signal add_score(int)
 signal defeat()
 

@@ -1,3 +1,4 @@
+EnemyMovement
 Marker3D
 Camera3D
 AnimationPlayer
@@ -11,4 +12,3 @@ Sprite3D
 Node3D
 MeshInstance3D
 AudioStreamPlayer3D
-GPUParticles3D

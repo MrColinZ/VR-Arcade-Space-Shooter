@@ -13,8 +13,8 @@
 [ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd" id="10_4c08n"]
 [ext_resource type="PackedScene" uid="uid://b5kubn5aon20g" path="res://PackedScenes/Enemys/enemy_2.tscn" id="11_wipod"]
 [ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/BossEnemy1Spawner.gd" id="12_7ksu3"]
-[ext_resource type="PackedScene" uid="uid://826s05k1jdv4" path="res://PackedScenes/Enemys/BossEnemy1pivot.tscn" id="13_bwdq6"]
 [ext_resource type="Script" path="res://Scripts/SoundtrackPlayer.gd" id="13_m8uve"]
+[ext_resource type="PackedScene" uid="uid://e3bo7qvxy5ww" path="res://PackedScenes/Enemys/boss_enemy_1.tscn" id="13_tdlng"]
 [ext_resource type="Script" path="res://Scripts/ScoreManager.gd" id="14_awcq8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bh8t"]
@@ -33,9 +33,6 @@ script = ExtResource("1_onfnt")
 
 [node name="Ship" parent="." instance=ExtResource("1_pklpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 0)
-
-[node name="XROrigin3D" parent="Ship" index="2"]
-vr_mode = false
 
 [node name="XRCamera3D" parent="Ship/XROrigin3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03899, 0.00950491)
@@ -69,7 +66,7 @@ enemy2_scene = ExtResource("11_wipod")
 
 [node name="BossEnemy1Spawner" type="Node" parent="LevelGenerator"]
 script = ExtResource("12_7ksu3")
-boss_enemy3_scene = ExtResource("13_bwdq6")
+boss_enemy3_scene = ExtResource("13_tdlng")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -24,6 +24,7 @@ collision_mask = 30
 script = ExtResource("1_sqfj8")
 min_size = 10
 points = 2
+can_shoot = false
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = null
@@ -33,5 +34,9 @@ transform = Transform3D(0.365, 0, 0, 0, 0.365, 0, 0, 0, 0.365, 0, 0, 0)
 
 [node name="Meteroid" parent="MeshInstance3D/Mesh" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_nxgyd")
+
+[node name="Cannon" parent="." index="4"]
+visible = false
+script = null
 
 [editable path="MeshInstance3D/Mesh"]

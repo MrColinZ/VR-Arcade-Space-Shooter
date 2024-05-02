@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var no_damage: bool = false
 @export var start_health = 5
 @export var shot_scene: PackedScene
 @export var start_rotation_speed = 1 
@@ -92,14 +93,15 @@ func _on_shot_interval_timeout():
 #Get calld when something hits the Player.
 func _on_area_entered(area):
 	
-	$DamageSound.play_random_pitch(0)
-	$AnimationPlayer.play("ship_hit")
-	health -= area.damage
-	health = clamp(health,0,start_health)
-	health_update()	
-	
-	if health <= 0: #Stop the Player and send a Signal to Main Node when Health gets to zero.
-		death()
+	if !no_damage:
+		$DamageSound.play_random_pitch(0)
+		$AnimationPlayer.play("ship_hit")
+		health -= area.damage
+		health = clamp(health,0,start_health)
+		health_update()	
+		
+		if health <= 0: #Stop the Player and send a Signal to Main Node when Health gets to zero.
+			death()
 
 
 func death():

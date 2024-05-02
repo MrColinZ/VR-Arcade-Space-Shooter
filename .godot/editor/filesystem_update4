@@ -1,10 +1,18 @@
-res://PackedScenes/Enemys/Meteor.tscn
+res://Scripts/Enemys/Cannon.gd
+res://PackedScenes/ParentScenes/Entity.tscn
 res://Recources/Materials/GridMaterial.tres
-res://Scenes/Main.tscn
-res://PackedScenes/Ship.tscn
-res://PackedScenes/Enemys/enemy_2.tscn
-res://PackedScenes/Enemys/BossEnemy1pivot.tscn
+res://Scripts/Enemys/Entity.gd
 res://PackedScenes/Enemys/Enemy1.tscn
-res://Recources/Materials/Enemy1_mat.tres
 res://Scripts/Enemys/Enemy1.gd
-res://Scripts/Chunk and EnemySpawner Generator/LevelGenerator.gd
+res://PackedScenes/Enemys/enemy_2.tscn
+res://Scripts/Enemys/enemy_2.gd
+res://PackedScenes/Enemys/boss_enemy_1.tscn
+res://Scripts/Enemys/BossEnemy1.gd
+res://Scenes/Main.tscn
+res://PackedScenes/Enemys/Meteor.tscn
+res://Scripts/Enemys/Enemy1_Ring.gd
+res://Scripts/enemy_movement.gd
+res://Scripts/TestShip.gd
+res://Scripts/Chunks and Enemyspawner/BossEnemy1Spawner.gd
+res://PackedScenes/Ship.tscn
+res://Scripts/XROrigin.gd

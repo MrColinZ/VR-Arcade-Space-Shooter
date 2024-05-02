@@ -23,10 +23,8 @@ func spawn_enemy():
 		var enemy = boss_enemy3_scene.instantiate()
 		enemy.position.x = level_with * 0.5
 		enemy.position.y = level_height * 0.5
-		print(level_with)
-		var enemy_child = enemy.get_node("BossEnemy1")
-		enemy_child.add_score.connect(get_node("/root/Main/ScoreManager").on_add_score)
-		enemy_child.defeat.connect(get_node("/root/Main/LevelGenerator").reset_spawnstate)
+		enemy.add_score.connect(get_node("/root/Main/ScoreManager").on_add_score)
+		enemy.defeat.connect(get_node("/root/Main/LevelGenerator").reset_spawnstate)
 		add_child(enemy)
 		print("spawn boss")
 
