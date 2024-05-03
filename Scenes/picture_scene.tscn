@@ -7,6 +7,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rv7xn"]
 albedo_texture = ExtResource("2_tg4l7")
+roughness = 0.18
 texture_filter = 2
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jk0i6"]

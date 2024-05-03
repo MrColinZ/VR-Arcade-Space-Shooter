@@ -16,9 +16,9 @@ func _ready():
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
-		vr_mode = false
+		vr_mode = false #If no VR Headset is detected, the Game can be Played on flatscreen.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
 	pass

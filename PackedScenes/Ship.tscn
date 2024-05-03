@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://h0ctogrwmi1w"]
+[gd_scene load_steps=23 format=3 uid="uid://h0ctogrwmi1w"]
 
 [ext_resource type="Script" path="res://Scripts/TestShip.gd" id="1_eyhyv"]
 [ext_resource type="PackedScene" uid="uid://b3rn1uu2akbuo" path="res://PackedScenes/Shots/player_shot_1.tscn" id="2_n42wk"]
 [ext_resource type="Script" path="res://Scripts/XROrigin.gd" id="3_3lpgn"]
 [ext_resource type="AudioStream" uid="uid://nhd28vasq82h" path="res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3" id="3_5r6up"]
 [ext_resource type="Script" path="res://Scripts/SoundRandomPichPlayer.gd" id="4_upq0j"]
+[ext_resource type="PackedScene" uid="uid://oguk22ajx23q" path="res://Recources/3DModel/DuckCup.blend" id="5_4eo22"]
 [ext_resource type="PackedScene" uid="uid://c03sc8swf0een" path="res://Recources/Arcade Ship.escn" id="6_fnhnm"]
 [ext_resource type="Texture2D" uid="uid://cnv1wr2yd0xg3" path="res://Recources/Textures/ShipTexture.png" id="7_kgaa5"]
 [ext_resource type="AudioStream" uid="uid://blxya6mngkihp" path="res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav" id="8_2v0aq"]
@@ -97,6 +98,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xti5l")
 
 [node name="Cube" parent="Mesh" index="1"]
 transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 3.84352, -1.28689, -1.68006e-07)
+
+[node name="DuckCup" parent="Mesh/Cube" index="0" instance=ExtResource("5_4eo22")]
+transform = Transform3D(-0.0534211, 0, 0.139094, 0, 0.149, 0, -0.139094, 0, -0.0534211, 0.297688, 0.724638, 0.825116)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00118381, 0.000929654, 0.571503)
