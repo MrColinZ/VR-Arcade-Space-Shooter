@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://h0ctogrwmi1w"]
+[gd_scene load_steps=24 format=3 uid="uid://h0ctogrwmi1w"]
 
-[ext_resource type="Script" path="res://Scripts/TestShip.gd" id="1_eyhyv"]
+[ext_resource type="Script" path="res://Scripts/Ship/TestShip.gd" id="1_eyhyv"]
 [ext_resource type="PackedScene" uid="uid://b3rn1uu2akbuo" path="res://PackedScenes/Shots/player_shot_1.tscn" id="2_n42wk"]
-[ext_resource type="Script" path="res://Scripts/XROrigin.gd" id="3_3lpgn"]
+[ext_resource type="Script" path="res://Scripts/Ship/XROrigin.gd" id="3_3lpgn"]
 [ext_resource type="AudioStream" uid="uid://nhd28vasq82h" path="res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3" id="3_5r6up"]
 [ext_resource type="Script" path="res://Scripts/SoundRandomPichPlayer.gd" id="4_upq0j"]
 [ext_resource type="PackedScene" uid="uid://oguk22ajx23q" path="res://Recources/3DModel/DuckCup.blend" id="5_4eo22"]
@@ -10,12 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cnv1wr2yd0xg3" path="res://Recources/Textures/ShipTexture.png" id="7_kgaa5"]
 [ext_resource type="AudioStream" uid="uid://blxya6mngkihp" path="res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav" id="8_2v0aq"]
 [ext_resource type="Texture2D" uid="uid://b7cqiisimggib" path="res://Recources/Textures/Zielkreuz.png" id="9_y81nc"]
-[ext_resource type="Script" path="res://Scripts/Crossair.gd" id="10_6k6qn"]
+[ext_resource type="Script" path="res://Scripts/Ship/Crossair.gd" id="10_6k6qn"]
 [ext_resource type="Texture2D" uid="uid://co8vg3w64pub7" path="res://Recources/Textures/Healthbar Animation/HB1.png" id="11_xrn4d"]
 [ext_resource type="Texture2D" uid="uid://57h6v3ndj6q8" path="res://Recources/Textures/Healthbar Animation/HB2.png" id="12_x4uh2"]
 [ext_resource type="Texture2D" uid="uid://67ke03cfwg47" path="res://Recources/Textures/Healthbar Animation/HB3.png" id="13_3molc"]
 [ext_resource type="Texture2D" uid="uid://damvjb8vtvkbq" path="res://Recources/Textures/Healthbar Animation/HB4.png" id="14_4owg7"]
 [ext_resource type="Texture2D" uid="uid://bjd1ro2eigxde" path="res://Recources/Textures/Healthbar Animation/HB5.png" id="15_r6xve"]
+[ext_resource type="Script" path="res://Scripts/Ship/CollectModul.gd" id="17_007ro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xti5l"]
 albedo_texture = ExtResource("7_kgaa5")
@@ -197,6 +198,9 @@ font_size = 26
 
 [node name="EnemyAimPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="CollectModul" type="Node" parent="."]
+script = ExtResource("17_007ro")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="button_pressed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]

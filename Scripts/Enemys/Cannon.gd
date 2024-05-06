@@ -28,11 +28,14 @@ func _on_reload_timer_timeout():
 
 
 func _on_shoot_timer_timeout():
-	if entity.can_shoot && global_position.z > ship_node.global_position.z:
+	if entity.can_shoot && global_position.z > ship_node.get_node("EnemyAimPoint").global_position.z:
 		var shot = shot_scene.instantiate()
 		shot.position = global_position
 		main_node.add_child(shot)
 		shot.look_at(ship_node.get_node("EnemyAimPoint").global_position)
+		#Making the Shot Direction a bit random
+		var rand_shot_dir = Vector3(randf_range(-1,1),randf_range(-1,1),randf_range(-1,1))*0.05
+		shot.rotation = shot.rotation + rand_shot_dir
 		shot_fired.emit()
 		
 		cur_shot_count -= 1

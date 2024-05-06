@@ -27,7 +27,7 @@ func _ready():
 	health = start_health
 
 
-func start(start_position): #Gets call by Main Node on Restart
+func start(_start_position): #Gets call by Main Node on Restart
 	
 	can_shoot = true
 	rotation_speed = start_rotation_speed 
@@ -96,12 +96,18 @@ func _on_area_entered(area):
 	if !no_damage:
 		$DamageSound.play_random_pitch(0)
 		$AnimationPlayer.play("ship_hit")
-		health -= area.damage
-		health = clamp(health,0,start_health)
-		health_update()	
+		health_update(-area.damage)	
 		
 		if health <= 0: #Stop the Player and send a Signal to Main Node when Health gets to zero.
 			death()
+		
+		no_damage = true #Making the Player unhittable after hit for given time
+		print(no_damage)
+		await get_tree().create_timer(2).timeout
+		no_damage = false
+		print(no_damage)
+		
+		
 
 
 func death():
@@ -116,15 +122,25 @@ func death():
 func _on_right_hand_button_pressed(input_name):
 	if input_name == "trigger_click":
 		shoot_button_pressed = true
-	
+
 func _on_right_hand_button_released(input_name):
 	if input_name == "trigger_click":
 		shoot_button_pressed = false
 
-func health_update():
-	for x in range(0,4):
+
+func health_update(value):
+	health += value
+	health = clamp(health,0,start_health)
+	if value < 0:
+		for x in range(0,4):
+			$Healthbar.set_frame(health-1)
+			await get_tree().create_timer(0.2).timeout
+			$Healthbar.set_frame(health)
+			await get_tree().create_timer(0.2).timeout
+			$Healthbar.set_frame(health-1)
+	else:
 		$Healthbar.set_frame(health-1)
-		await get_tree().create_timer(0.2).timeout
-		$Healthbar.set_frame(health)
-		await get_tree().create_timer(0.2).timeout
-		$Healthbar.set_frame(health-1)
+			
+
+func update_speed(speed):
+	move_speed = start_move_speed + speed

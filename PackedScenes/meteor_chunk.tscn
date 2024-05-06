@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://sfms2jukwolq"]
+[gd_scene load_steps=6 format=3 uid="uid://sfms2jukwolq"]
 
 [ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/MeteorChunk.gd" id="1_nw16q"]
 [ext_resource type="PackedScene" uid="uid://p3fa31lut2b3" path="res://PackedScenes/Enemys/Meteor.tscn" id="2_f30qd"]
+[ext_resource type="PackedScene" uid="uid://cndedkbc3ogjr" path="res://PackedScenes/Enemys/health_meteor.tscn" id="3_d5aiy"]
 [ext_resource type="PackedScene" uid="uid://bgdofur02d5c3" path="res://PackedScenes/wall.tscn" id="3_yyj78"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4eiav"]
@@ -9,6 +10,7 @@
 [node name="MeteorChunk" type="Node3D" groups=["Chunks"]]
 script = ExtResource("1_nw16q")
 meteor_scene = ExtResource("2_f30qd")
+h_meteor_scene = ExtResource("3_d5aiy")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 32

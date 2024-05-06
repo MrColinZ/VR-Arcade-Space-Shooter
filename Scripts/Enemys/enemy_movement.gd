@@ -20,13 +20,14 @@ var next_xy_pos: Vector2
 
 func _ready():
 	if random_xy_pos:
+		await get_tree().create_timer(pos_wait_time).timeout
 		new_random_xy_pos()
 		
 	if random_distance:
 		distance_to_player = randi_range(distance_to_player,distance_to_player+50)
 
 
-func _process(delta):
+func _process(_delta):
 	
 	if keep_distance_to_player:
 		entity.global_position.z = ship_node.global_position.z + distance_to_player

@@ -1,8 +1,5 @@
 extends "res://Scripts/Enemys/Entity.gd"
 
-@onready var ship_node = get_node("/root/Main/Ship")
-var position_state = "upleft"
-
 
 
 func _ready():

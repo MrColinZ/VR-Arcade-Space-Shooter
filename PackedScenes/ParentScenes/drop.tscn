@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnr6yi4divnjq"]
+
+[ext_resource type="Script" path="res://Scripts/drop.gd" id="1_uposl"]
+[ext_resource type="AudioStream" uid="uid://lqj48l8qsebt" path="res://Recources/Soundeffects/mixkit-unlock-new-item-game-notification-254.wav" id="2_icj7w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6jyq"]
+albedo_color = Color(0.454902, 0.921569, 0.294118, 1)
+emission_enabled = true
+emission = Color(0, 0.580392, 0.109804, 1)
+emission_energy_multiplier = 6.38
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gvl8s"]
+material = SubResource("StandardMaterial3D_l6jyq")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4obyj"]
+
+[node name="Drop" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_uposl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_gvl8s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4obyj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_icj7w")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -6,7 +6,7 @@ extends Node3D
 @export var level_with = 100
 @export var level_height = 100
 @export var difficulty_increase = 0.05 #Difficulty increase per Chunk creation
-
+@onready var main_node = get_parent()
 var spawn_state = "normal"
 var chunk_count = 0 
 var next_position = Vector3(0,0,0) 
@@ -64,19 +64,22 @@ func new_chunk():
 		$MeteorChunkGenerator.new_meteor_chunk() #Adds a new Meteor Chunk. You can add a logic to generate diffrent types of chunks.
 	
 	if next_enemy_type == 1:
-		$Enemy1SpawnerGenerator.new_enemy1_spawner() #Call this to spawn new Enemys from Type 1
+		$Enemy1Spawner.spawn_enemy(difficulty) #Call this to spawn new Enemys from Type 1
 	
 	if next_enemy_type == 2:
-		$Enemy2Spawner.spawn_enemy()
+		$Enemy2Spawner.spawn_enemy(difficulty)
 	
 	if next_enemy_type == 100:
-		$BossEnemy1Spawner.spawn_enemy()
+		$BossEnemy1Spawner.spawn_enemy(difficulty)
 		
 	chunk_count += 1
 	next_position = Vector3(0,0,next_position.z + chunk_length)#Set Position for next Chunk
 	
-	difficulty = 1.0 + float(chunk_count) * difficulty_increase
-
+	difficulty = 1.0 + float(chunk_count) * difficulty_increase #Update Difficulty
+	print("Difficulty:" + str(difficulty))
+	
+	if main_node.game_state == "Running": #Update Ship velocity according to difficulty
+		ship_node.update_speed(difficulty)
 
 func reset_spawnstate():
 	spawn_state = "normal"

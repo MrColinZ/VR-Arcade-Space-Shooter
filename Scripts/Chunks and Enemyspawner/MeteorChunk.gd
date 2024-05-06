@@ -3,7 +3,7 @@ extends Node3D
 var level_with
 var level_height
 @export var meteor_scene: PackedScene
-
+@export var h_meteor_scene: PackedScene
 func _ready():
 	level_with = get_parent().level_with
 	level_height = get_parent().level_height
@@ -32,9 +32,17 @@ func create_level(chunk_length,meteor_count):
 	$WallUp.scale = Vector3(chunk_length,level_with,1)
 	$WallDown.scale = Vector3(chunk_length,level_with,1)
 	
+	randomize()
 	
+	var rand_health_met = randi_range(0,2) #Chanche to spawn a Health Meteor.
+	if rand_health_met == 0:
+		var h_meteor = h_meteor_scene.instantiate()
+		var z_pos = randi_range(0,100)
+		h_meteor.position = Vector3(randi_range(0,level_with),randi_range(0,level_height),z_pos)
+		h_meteor.add_score.connect(get_node("/root/Main/ScoreManager").on_add_score)
+		add_child(h_meteor)
 	
-	for meteors in range(0,meteor_count):
+	for meteors in range(0,meteor_count): #Spawning the normal Meteors
 		var meteor = meteor_scene.instantiate()
 		var z_pos = chunk_length/meteor_count * meteors #Distributes the Meteors on z_axis
 		meteor.position = Vector3(randi_range(0,level_with),randi_range(0,level_height),z_pos)

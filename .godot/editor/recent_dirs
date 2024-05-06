@@ -1,16 +1,20 @@
-H:/Eigene Games/VR Aracade Space Shooter/TestVersion0.2
-res://PackedScenes/Enemys
+H:/Eigene Games/VR Aracade Space Shooter/Test0.3
+H:/Eigene Games/VR Aracade Space Shooter/VR-Arcade-Space-Shooter
+res://Recources/Soundeffects
+res://PackedScenes/Drops
 res://Scripts/Enemys
+res://PackedScenes/Enemys
+res://Scripts
+res://Recources/3DModel
+res://Scripts/Chunks and Enemyspawner
+H:/Eigene Games/VR Aracade Space Shooter/TestVersion0.2
 res://Recources/Textures
 res://Recources/Materials
-res://Scripts/Chunks and Enemyspawner
 res://Scenes
 H:/Eigene Games/VR Aracade Space Shooter/TestVersion0.1
-res://Scripts
 res://PackedScenes
 res://PackedScenes/Shots
 res://Animation
 res://
-res://Recources/Soundeffects
 res://Recources
 res://PackedScenes/ParentScenes

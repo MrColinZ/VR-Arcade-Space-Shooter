@@ -1,18 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://4ygt54d3or1g"]
+[gd_scene load_steps=18 format=3 uid="uid://4ygt54d3or1g"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_onfnt"]
 [ext_resource type="PackedScene" uid="uid://h0ctogrwmi1w" path="res://PackedScenes/Ship.tscn" id="1_pklpr"]
-[ext_resource type="Script" path="res://Scripts/Chunk and EnemySpawner Generator/LevelGenerator.gd" id="2_56lf0"]
+[ext_resource type="Script" path="res://Scripts/Level and Chunk  Generator/LevelGenerator.gd" id="2_56lf0"]
 [ext_resource type="PackedScene" uid="uid://sfms2jukwolq" path="res://PackedScenes/meteor_chunk.tscn" id="3_c2weg"]
-[ext_resource type="Script" path="res://Scripts/Chunk and EnemySpawner Generator/MeteorChunkGenerator.gd" id="5_6t7r7"]
-[ext_resource type="PackedScene" uid="uid://bcfygdv2d5j3b" path="res://PackedScenes/enemy_1_spawner.tscn" id="5_sxyyw"]
+[ext_resource type="Script" path="res://Scripts/Level and Chunk  Generator/MeteorChunkGenerator.gd" id="5_6t7r7"]
 [ext_resource type="Texture2D" uid="uid://v2kqx0vuom2b" path="res://Recources/Textures/panorama_image.png" id="6_41ej3"]
-[ext_resource type="Script" path="res://Scripts/Chunk and EnemySpawner Generator/Enemy1SpawnerGenerator.gd" id="6_wuj5a"]
-[ext_resource type="Script" path="res://Scripts/Chunk and EnemySpawner Generator/EmtyChunkGenerator.gd" id="8_mh8ji"]
+[ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/enemy_spawner.gd" id="8_g3add"]
+[ext_resource type="Script" path="res://Scripts/Level and Chunk  Generator/EmtyChunkGenerator.gd" id="8_mh8ji"]
 [ext_resource type="PackedScene" uid="uid://cdfp1rxvjbd26" path="res://PackedScenes/emty_chunk.tscn" id="9_n3uu1"]
-[ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/Enemy2Spawner.gd" id="10_4c08n"]
+[ext_resource type="PackedScene" uid="uid://jth681ga6qhv" path="res://PackedScenes/Enemys/Enemy1.tscn" id="9_q2ogr"]
 [ext_resource type="PackedScene" uid="uid://b5kubn5aon20g" path="res://PackedScenes/Enemys/enemy_2.tscn" id="11_wipod"]
-[ext_resource type="Script" path="res://Scripts/Chunks and Enemyspawner/BossEnemy1Spawner.gd" id="12_7ksu3"]
 [ext_resource type="Script" path="res://Scripts/SoundtrackPlayer.gd" id="13_m8uve"]
 [ext_resource type="PackedScene" uid="uid://e3bo7qvxy5ww" path="res://PackedScenes/Enemys/boss_enemy_1.tscn" id="13_tdlng"]
 [ext_resource type="Script" path="res://Scripts/ScoreManager.gd" id="14_awcq8"]
@@ -33,6 +31,7 @@ script = ExtResource("1_onfnt")
 
 [node name="Ship" parent="." instance=ExtResource("1_pklpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 0)
+start_move_speed = 40
 
 [node name="XRCamera3D" parent="Ship/XROrigin3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03899, 0.00950491)
@@ -56,17 +55,27 @@ meteor_chunk_scene = ExtResource("3_c2weg")
 script = ExtResource("8_mh8ji")
 emty_chunk_scene = ExtResource("9_n3uu1")
 
-[node name="Enemy1SpawnerGenerator" type="Node" parent="LevelGenerator"]
-script = ExtResource("6_wuj5a")
-enemy1_spawner_scene = ExtResource("5_sxyyw")
+[node name="Enemy1Spawner" type="Node" parent="LevelGenerator"]
+script = ExtResource("8_g3add")
+enemy_scene = ExtResource("9_q2ogr")
+random_xy_pos = true
+random_z_pos = true
+min_z_dis_to_player = 300
+scale_with_difficulty = true
 
 [node name="Enemy2Spawner" type="Node" parent="LevelGenerator"]
-script = ExtResource("10_4c08n")
-enemy2_scene = ExtResource("11_wipod")
+script = ExtResource("8_g3add")
+enemy_scene = ExtResource("11_wipod")
+random_xy_pos = true
+random_z_pos = true
+min_z_dis_to_player = 130
 
 [node name="BossEnemy1Spawner" type="Node" parent="LevelGenerator"]
-script = ExtResource("12_7ksu3")
-boss_enemy3_scene = ExtResource("13_tdlng")
+script = ExtResource("8_g3add")
+enemy_scene = ExtResource("13_tdlng")
+connect_defeat_signal = true
+xy_pos_level_mid = true
+min_z_dis_to_player = 130
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

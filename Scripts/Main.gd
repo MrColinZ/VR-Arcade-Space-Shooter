@@ -41,6 +41,7 @@ func reset_to_menu():
 	get_tree().call_group("Spawner", "queue_free")
 	get_tree().call_group("Shots", "queue_free")
 	get_tree().call_group("Enemys", "queue_free")
+	get_tree().call_group("Drops", "queue_free")
 
 
 func new_game(): #Starts New Game

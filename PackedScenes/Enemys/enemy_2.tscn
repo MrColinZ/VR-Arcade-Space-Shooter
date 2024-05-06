@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="3_y346k"]
 [ext_resource type="AnimationLibrary" uid="uid://ylybpvoilvx6" path="res://Animation/EnemyEnter.res" id="4_bvhem"]
 [ext_resource type="PackedScene" uid="uid://cxuw0hhboruk2" path="res://Recources/3DModel/Enemy2_Model.blend" id="4_i5q8x"]
-[ext_resource type="Script" path="res://Scripts/enemy_movement.gd" id="6_yfl4s"]
+[ext_resource type="Script" path="res://Scripts/Enemys/enemy_movement.gd" id="6_yfl4s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xrss"]
 size = Vector3(6.26744, 0.927856, 3.14447)

@@ -6,7 +6,6 @@ var rotation_speed
 var rotation_angle
 
 func _ready():
-	pass 
 
 	#Set the Meteor to a Random Size when created
 	var random = randf_range(min_size,min_size+10)
@@ -19,4 +18,3 @@ func _ready():
 
 func _process(_delta):
 	rotate(rotation_angle,rotation_speed * rotation_speed_multiplyer)
-	pass

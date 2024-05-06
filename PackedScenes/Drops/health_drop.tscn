@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhik40wuhnaim"]
+
+[ext_resource type="PackedScene" uid="uid://cnr6yi4divnjq" path="res://PackedScenes/ParentScenes/drop.tscn" id="1_r2tg6"]
+
+[node name="HealthDrop" instance=ExtResource("1_r2tg6")]
+drop_type = "Health"

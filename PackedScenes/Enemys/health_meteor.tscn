@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://cndedkbc3ogjr"]
+
+[ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_7vbj6"]
+[ext_resource type="PackedScene" uid="uid://b6oof56km4plc" path="res://Recources/3DModel/HealthMeteroid.blend" id="2_0cf0a"]
+[ext_resource type="Script" path="res://Scripts/Enemys/Meteor.gd" id="2_hmovc"]
+[ext_resource type="Texture2D" uid="uid://bkanf6sauey63" path="res://Recources/3DModel/HealthMeteroidTexture.png" id="3_7r0rp"]
+[ext_resource type="PackedScene" uid="uid://bhik40wuhnaim" path="res://PackedScenes/Drops/health_drop.tscn" id="3_jspr3"]
+[ext_resource type="Texture2D" uid="uid://fcnry3ijtip4" path="res://Recources/3DModel/HealthMeteroidTexture_em.png" id="4_4yrhi"]
+[ext_resource type="Texture2D" uid="uid://di1u7ih37ws88" path="res://Recources/3DModel/MeteroidTexture_n.png" id="5_gwkto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvfbp"]
+albedo_texture = ExtResource("3_7r0rp")
+metallic = 0.35
+emission_enabled = true
+emission_energy_multiplier = 5.49
+emission_texture = ExtResource("4_4yrhi")
+normal_enabled = true
+normal_texture = ExtResource("5_gwkto")
+texture_filter = 0
+
+[node name="HealthMeteor" instance=ExtResource("1_7vbj6")]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("2_hmovc")
+min_size = 10
+drop_scene = ExtResource("3_jspr3")
+can_drop = true
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = null
+
+[node name="HealthMeteroid" parent="MeshInstance3D" index="0" instance=ExtResource("2_0cf0a")]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 0, 0, 0)
+
+[node name="Meteroid" parent="MeshInstance3D/HealthMeteroid" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_dvfbp")
+
+[node name="Cannon" parent="." index="4"]
+script = null
+
+[node name="ReloadTimer" parent="Cannon" index="1"]
+one_shot = false
+
+[editable path="MeshInstance3D/HealthMeteroid"]

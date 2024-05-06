@@ -14,6 +14,9 @@ func _ready():
 
 func _process(_delta):
 	look_at(ship_node.global_position)
+	
+	if global_position.z + 200 < ship_node.global_position.z:
+		queue_free()
 
 
 

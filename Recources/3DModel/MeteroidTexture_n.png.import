@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di1u7ih37ws88"
-path.s3tc="res://.godot/imported/MeteroidTexture_n.png-1874123268c6e9f6b57414f602004b34.s3tc.ctex"
+path="res://.godot/imported/MeteroidTexture_n.png-a7c3fdbe6d8a35085a865f27f5379549.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recources/Textures/MeteroidTexture_n.png"
-dest_files=["res://.godot/imported/MeteroidTexture_n.png-1874123268c6e9f6b57414f602004b34.s3tc.ctex"]
+source_file="res://Recources/3DModel/MeteroidTexture_n.png"
+dest_files=["res://.godot/imported/MeteroidTexture_n.png-a7c3fdbe6d8a35085a865f27f5379549.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

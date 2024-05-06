@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Scripts/Enemys/Meteor.gd" id="1_sqfj8"]
 [ext_resource type="PackedScene" uid="uid://6acsobskqhax" path="res://Recources/3DModel/Meteroid.escn" id="3_jfndn"]
 [ext_resource type="Texture2D" uid="uid://2vmng1m18ipm" path="res://Recources/Textures/MeteroidTexture.png" id="4_l6qcj"]
-[ext_resource type="Texture2D" uid="uid://di1u7ih37ws88" path="res://Recources/Textures/MeteroidTexture_n.png" id="5_o2d83"]
+[ext_resource type="Texture2D" uid="uid://di1u7ih37ws88" path="res://Recources/3DModel/MeteroidTexture_n.png" id="5_05xw1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxgyd"]
 albedo_texture = ExtResource("4_l6qcj")
 metallic = 0.32
 normal_enabled = true
-normal_texture = ExtResource("5_o2d83")
+normal_texture = ExtResource("5_05xw1")
 rim_tint = 1.0
 ao_light_affect = 0.43
 ao_texture = ExtResource("4_l6qcj")
