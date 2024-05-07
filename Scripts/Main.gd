@@ -28,6 +28,7 @@ func reset_to_menu():
 	game_state = "Menu"
 	$ScoreManager/ScoreUpdater.stop()
 	$CanvasLayer/StartButton.visible = true
+	$CanvasLayer/InvertAxisButton.visible = true
 	randomize()
 	$SoundtrackPlayer.play_soundtrack($SoundtrackPlayer.THEMES.MENU,true)
 	$Ship.position = player_start_position
@@ -60,6 +61,7 @@ func _on_button_pressed(): #Reset Button to get to Menu
 func _on_start_button_pressed(): #Start Button to Start new Game
 	new_game()
 	$CanvasLayer/StartButton.visible = false
+	$CanvasLayer/InvertAxisButton.visible = false
 
 
 func _on_right_hand_button_pressed(input_name):

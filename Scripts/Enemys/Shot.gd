@@ -14,8 +14,6 @@ func _ready():
 func _process(delta):
 	#Makes the Shot move
 	translate(Vector3(0,0,-move_speed) * delta)
-	
-	
 	# Destroys the Shot by given distance to start position.
 	var distance_to_start = position.distance_to(start_position)
 	if distance_to_start > destroy_distance:

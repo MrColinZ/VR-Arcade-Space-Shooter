@@ -84,7 +84,6 @@ libraries = {
 
 [node name="Cannon" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23)
-reload_time = 3
 shoot_interval = 0.2
 
 [node name="EnemyMovement" type="Node" parent="." index="7"]

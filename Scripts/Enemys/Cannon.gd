@@ -2,8 +2,9 @@ extends Marker3D
 
 @export var shot_scene: PackedScene
 @export var shot_count = 5
-@export var reload_time = 5
+@export var reload_time = 5.0
 @export var shoot_interval = 0.5
+@export var shot_dir_to_player: bool = true
 @export var entity: Node
 @onready var ship_node = get_node("/root/Main/Ship")
 @onready var main_node = get_node("/root/Main")
@@ -32,10 +33,13 @@ func _on_shoot_timer_timeout():
 		var shot = shot_scene.instantiate()
 		shot.position = global_position
 		main_node.add_child(shot)
-		shot.look_at(ship_node.get_node("EnemyAimPoint").global_position)
+		if shot_dir_to_player:
+			shot.look_at(ship_node.get_node("EnemyAimPoint").global_position)
+			
 		#Making the Shot Direction a bit random
 		var rand_shot_dir = Vector3(randf_range(-1,1),randf_range(-1,1),randf_range(-1,1))*0.05
 		shot.rotation = shot.rotation + rand_shot_dir
+		
 		shot_fired.emit()
 		
 		cur_shot_count -= 1

@@ -35,7 +35,7 @@ func reset():
 #Gets called when a new Chunk needs to be generated.
 func new_chunk():
 	#Chunk Types: 0=Emty, 1=Meteor
-	#Enemy Types: 0=none, 1=Stationary 2=MovingEnemy, 100=BossEnemy1
+	#Enemy Types: 0=none, 1=Stationary 2=MovingEnemy, 3=PulseShotEnemy, 100=BossEnemy1
 	
 	var next_chunk_type
 	if chunk_count == 0:
@@ -55,7 +55,10 @@ func new_chunk():
 		if chunk_count == 20:
 			spawn_state = "boss"
 			next_enemy_type = 100
+		if chunk_count > 5:
+			next_enemy_type = randi_range(1,3)
 	
+	print(spawn_state)
 	
 	if next_chunk_type == 0:
 		$EmtyChunkGenerator.new_emty_chunk()
@@ -71,6 +74,9 @@ func new_chunk():
 	
 	if next_enemy_type == 100:
 		$BossEnemy1Spawner.spawn_enemy(difficulty)
+		
+	if next_enemy_type == 3:
+		$Enemy3Spawner.spawn_enemy(difficulty)
 		
 	chunk_count += 1
 	next_position = Vector3(0,0,next_position.z + chunk_length)#Set Position for next Chunk

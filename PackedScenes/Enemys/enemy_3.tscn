@@ -1,0 +1,80 @@
+[gd_scene load_steps=16 format=3 uid="uid://dkgntdlie8ari"]
+
+[ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_tvumj"]
+[ext_resource type="PackedScene" uid="uid://bg5rcyiii2avv" path="res://PackedScenes/Shots/pulse_shot.tscn" id="2_ad8v0"]
+[ext_resource type="Script" path="res://Scripts/Enemys/enemy_movement.gd" id="3_qdyum"]
+
+[sub_resource type="Gradient" id="Gradient_xxp5r"]
+offsets = PackedFloat32Array(0, 0.657895)
+colors = PackedColorArray(0.0868888, 7.49877e-05, 0.27403, 1, 0, 0.663635, 0.45591, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qguka"]
+noise_type = 4
+frequency = 0.1
+offset = Vector3(285.71, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s0w64"]
+color_ramp = SubResource("Gradient_xxp5r")
+noise = SubResource("FastNoiseLite_qguka")
+
+[sub_resource type="Gradient" id="Gradient_gppsd"]
+offsets = PackedFloat32Array(0, 0.756579)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b6uv2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_81y7p"]
+seamless_blend_skirt = 0.0
+color_ramp = SubResource("Gradient_gppsd")
+noise = SubResource("FastNoiseLite_b6uv2")
+
+[sub_resource type="Gradient" id="Gradient_qd3rn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_umcyf"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dfotf"]
+as_normal_map = true
+color_ramp = SubResource("Gradient_qd3rn")
+noise = SubResource("FastNoiseLite_umcyf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tht3j"]
+albedo_texture = SubResource("NoiseTexture2D_s0w64")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_dfotf")
+heightmap_enabled = true
+heightmap_scale = 2.538
+heightmap_texture = SubResource("NoiseTexture2D_81y7p")
+
+[sub_resource type="PrismMesh" id="PrismMesh_rqms7"]
+material = SubResource("StandardMaterial3D_tht3j")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0nec2"]
+size = Vector3(0.904907, 0.989258, 1)
+
+[node name="Enemy3" instance=ExtResource("1_tvumj")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+collision_layer = 2
+collision_mask = 12
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("PrismMesh_rqms7")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00762939, -0.0380859, 0)
+shape = SubResource("BoxShape3D_0nec2")
+
+[node name="Cannon" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.33247)
+shot_scene = ExtResource("2_ad8v0")
+shot_count = 1
+reload_time = 0.2
+shoot_interval = 0.1
+shot_dir_to_player = false
+
+[node name="EnemyMovement" type="Node" parent="." index="5"]
+script = ExtResource("3_qdyum")
+keep_distance_to_player = true
+distance_to_player = 80
+random_distance = true
+move_in_circle = true
+move_speed = 0.5

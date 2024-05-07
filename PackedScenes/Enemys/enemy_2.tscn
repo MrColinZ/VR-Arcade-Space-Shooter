@@ -19,6 +19,7 @@ shot_scene = ExtResource("3_y346k")
 points = 10
 
 [node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
 mesh = null
 
 [node name="Enemy2_Model" parent="MeshInstance3D" index="0" instance=ExtResource("4_i5q8x")]

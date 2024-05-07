@@ -1,17 +1,17 @@
-res://Scenes/Main.tscn
+res://PackedScenes/Enemys/boss_enemy_1.tscn
 res://Recources/Materials/GridMaterial.tres
+res://ToDo.txt
+res://Scenes/Main.tscn
 res://PackedScenes/Enemys/health_meteor.tscn
 res://PackedScenes/Drops/health_drop.tscn
 res://PackedScenes/meteor_chunk.tscn
-res://PackedScenes/Enemys/Meteor.tscn
-res://PackedScenes/ParentScenes/drop.tscn
-res://PackedScenes/Ship.tscn
-res://Scripts/drop.gd
-res://Scripts/Level and Chunk  Generator/LevelGenerator.gd
-res://Scripts/Chunks and Enemyspawner/enemy_spawner.gd
-res://Scripts/Enemys/Entity.gd
-res://Scripts/Enemys/Cannon.gd
-res://Scripts/Enemys/enemy_movement.gd
+res://PackedScenes/Enemys/enemy_2.tscn
 res://Scripts/Ship/TestShip.gd
-res://ToDo.txt
-res://PackedScenes/Enemys/boss_enemy_1.tscn
+res://Scripts/Main.gd
+res://PackedScenes/Shots/pulse_shot.tscn
+res://PulseShot.gd
+res://PackedScenes/Enemys/enemy_3.tscn
+res://Scripts/Enemys/Cannon.gd
+res://Scripts/Level and Chunk  Generator/LevelGenerator.gd
+res://Scripts/Enemys/enemy_movement.gd
+res://Scripts/Enemys/Shot.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4ygt54d3or1g"]
+[gd_scene load_steps=19 format=3 uid="uid://4ygt54d3or1g"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_onfnt"]
 [ext_resource type="PackedScene" uid="uid://h0ctogrwmi1w" path="res://PackedScenes/Ship.tscn" id="1_pklpr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cdfp1rxvjbd26" path="res://PackedScenes/emty_chunk.tscn" id="9_n3uu1"]
 [ext_resource type="PackedScene" uid="uid://jth681ga6qhv" path="res://PackedScenes/Enemys/Enemy1.tscn" id="9_q2ogr"]
 [ext_resource type="PackedScene" uid="uid://b5kubn5aon20g" path="res://PackedScenes/Enemys/enemy_2.tscn" id="11_wipod"]
+[ext_resource type="PackedScene" uid="uid://dkgntdlie8ari" path="res://PackedScenes/Enemys/enemy_3.tscn" id="12_3l45s"]
 [ext_resource type="Script" path="res://Scripts/SoundtrackPlayer.gd" id="13_m8uve"]
 [ext_resource type="PackedScene" uid="uid://e3bo7qvxy5ww" path="res://PackedScenes/Enemys/boss_enemy_1.tscn" id="13_tdlng"]
 [ext_resource type="Script" path="res://Scripts/ScoreManager.gd" id="14_awcq8"]
@@ -25,6 +26,9 @@ sky_material = SubResource("PanoramaSkyMaterial_6bh8t")
 background_mode = 2
 background_energy_multiplier = 0.66
 sky = SubResource("Sky_ahdk3")
+ambient_light_source = 2
+ambient_light_color = Color(0.631373, 0.615686, 0.584314, 1)
+ambient_light_energy = 0.85
 
 [node name="Main" type="Node"]
 script = ExtResource("1_onfnt")
@@ -41,6 +45,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, -7.49289e-08, 0.515173, 0.857086, 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.347293, -0.580902, 0.736166, 0.24785, 0.813974, 0.525374, -0.90441, 2.14889e-07, 0.426664, 3.77487, 10.5043, 26.6551)
+light_energy = 2.429
 shadow_enabled = true
 
 [node name="LevelGenerator" type="Node3D" parent="." node_paths=PackedStringArray("ship_node")]
@@ -77,6 +82,11 @@ connect_defeat_signal = true
 xy_pos_level_mid = true
 min_z_dis_to_player = 130
 
+[node name="Enemy3Spawner" type="Node" parent="LevelGenerator"]
+script = ExtResource("8_g3add")
+enemy_scene = ExtResource("12_3l45s")
+random_xy_pos = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
@@ -110,6 +120,19 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 73
 text = "Start"
 
+[node name="InvertAxisButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -524.0
+offset_top = 44.0
+offset_right = -262.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Invert vertical Axis"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_egf7b")
 
@@ -131,6 +154,7 @@ autostart = true
 [connection signal="button_pressed" from="Ship/XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/InvertAxisButton" to="Ship" method="_on_invert_axis_button_toggled"]
 [connection signal="finished" from="SoundtrackPlayer/MusicPlayer" to="SoundtrackPlayer" method="_on_music_player_finished"]
 [connection signal="timeout" from="ScoreManager/ScoreUpdater" to="ScoreManager" method="_on_score_updater_timeout"]
 

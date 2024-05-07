@@ -4,8 +4,9 @@ extends Area3D
 @export var start_health = 5
 @export var shot_scene: PackedScene
 @export var start_rotation_speed = 1 
-@export var start_yaw_rate = 0.5
+@export var start_yaw_rate = 0.3
 @export var start_move_speed = 50
+var invert_x_axis: bool = false
 var health
 var rotation_speed 
 var yaw_rate
@@ -45,7 +46,8 @@ func _process(delta):
 	if $XROrigin3D.vr_mode == false:
 		rotation_horizontal = Input.get_axis("horizontal_left","horizontal_right")
 		rotation_vertical = Input.get_axis("vertical_down","vertical_up")
-		
+		if invert_x_axis:
+			rotation_vertical = -rotation_vertical
 		
 	#Use Lerp function to get smooth motion
 	cur_rotation_speed_z = lerp_angle(cur_rotation_speed_z,rotation_horizontal,0.05)
@@ -54,6 +56,7 @@ func _process(delta):
 	#Set rotation
 	rotate_object_local(Vector3(1,0,0),cur_rotation_speed_x * rotation_speed * delta)
 	rotate_object_local(Vector3(0,0,1),cur_rotation_speed_z * rotation_speed * delta)
+
 	
 	#Set Yaw
 	rotate_object_local(Vector3(0,1,0),-cur_rotation_speed_z * yaw_rate * delta)
@@ -144,3 +147,10 @@ func health_update(value):
 
 func update_speed(speed):
 	move_speed = start_move_speed + speed
+
+
+func _on_invert_axis_button_toggled(toggled_on): #Invert x Axis when Button in Menu is pressed
+	if toggled_on:
+		invert_x_axis = true
+	else:
+		invert_x_axis = false
