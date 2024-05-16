@@ -105,12 +105,9 @@ func _on_area_entered(area):
 			death()
 		
 		no_damage = true #Making the Player unhittable after hit for given time
-		print(no_damage)
+		
 		await get_tree().create_timer(2).timeout
 		no_damage = false
-		print(no_damage)
-		
-		
 
 
 func death():

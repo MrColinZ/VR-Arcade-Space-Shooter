@@ -1,11 +1,12 @@
 extends Area3D
 
-@export var drop_scene: PackedScene
+
 @export var damage = 10
 @export var health = 5
 @export var points = 5
 @export var can_shoot: bool = true
 @export var can_drop: bool = false
+@export var drop_scene: PackedScene
 @onready var main = get_node("/root/Main")
 var difficulty
 signal add_score(int)
@@ -25,7 +26,6 @@ func _process(_delta):
 func _on_area_entered(body):
 	
 	health -= body.damage
-	print(health)
 	if health <= 0:
 		add_score.emit(points)
 		defeat.emit()

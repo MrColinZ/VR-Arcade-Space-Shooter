@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5kubn5aon20g"]
+[gd_scene load_steps=7 format=3 uid="uid://b5kubn5aon20g"]
 
 [ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_jskns"]
-[ext_resource type="Script" path="res://Scripts/Enemys/enemy_2.gd" id="2_oa3f7"]
-[ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="3_y346k"]
+[ext_resource type="PackedScene" uid="uid://cxuw0hhboruk2" path="res://Recources/3DModel/Enemy2/Enemy2_Model.blend" id="2_78bwg"]
 [ext_resource type="AnimationLibrary" uid="uid://ylybpvoilvx6" path="res://Animation/EnemyEnter.res" id="4_bvhem"]
-[ext_resource type="PackedScene" uid="uid://cxuw0hhboruk2" path="res://Recources/3DModel/Enemy2_Model.blend" id="4_i5q8x"]
 [ext_resource type="Script" path="res://Scripts/Enemys/enemy_movement.gd" id="6_yfl4s"]
+[ext_resource type="Script" path="res://Scripts/ClassScripts/EntryAnimation.gd" id="7_5rkn0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xrss"]
 size = Vector3(6.26744, 0.927856, 3.14447)
@@ -14,32 +13,33 @@ size = Vector3(6.26744, 0.927856, 3.14447)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 collision_layer = 2
 collision_mask = 14
-script = ExtResource("2_oa3f7")
-shot_scene = ExtResource("3_y346k")
-points = 10
 
 [node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
 mesh = null
 
-[node name="Enemy2_Model" parent="MeshInstance3D" index="0" instance=ExtResource("4_i5q8x")]
+[node name="Enemy2_Model" parent="MeshInstance3D" index="0" instance=ExtResource("2_78bwg")]
+
+[node name="Cube" parent="MeshInstance3D/Enemy2_Model" index="1"]
+transform = Transform3D(0.216256, 0, 0, 0, 0.216256, 0, 0, 0, 0.216256, 0, 0.422481, -1.25032)
 
 [node name="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138344, 0.228394, -0.173309)
 shape = SubResource("BoxShape3D_3xrss")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
-libraries = {
-"EnemyEnter": ExtResource("4_bvhem")
-}
-
-[node name="Cannon" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45252, -1.12278)
+[node name="Cannon" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412199, -2.37446)
 shot_count = 3
-reload_time = 4
 shoot_interval = 0.3
 
-[node name="EnemyMovement" type="Node" parent="." index="6"]
+[node name="EnemyMovement" type="Node" parent="." index="5"]
 script = ExtResource("6_yfl4s")
 keep_distance_to_player = true
 random_distance = true
+
+[node name="EntryAnimation" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"EnemyEnter": ExtResource("4_bvhem")
+}
+script = ExtResource("7_5rkn0")
+
+[editable path="MeshInstance3D/Enemy2_Model"]

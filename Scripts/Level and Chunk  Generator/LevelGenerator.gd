@@ -8,7 +8,8 @@ extends Node3D
 @export var difficulty_increase = 0.05 #Difficulty increase per Chunk creation
 @onready var main_node = get_parent()
 var spawn_state = "normal"
-var chunk_count = 0 
+var chunk_count = 0
+var game_progress = 0 
 var next_position = Vector3(0,0,0) 
 var difficulty = 1
 
@@ -27,6 +28,7 @@ func _process(_delta):
 
 func reset():
 	chunk_count = 0
+	game_progress = 0
 	next_position = Vector3.ZERO
 	difficulty = 1
 	spawn_state = "normal"
@@ -46,19 +48,21 @@ func new_chunk():
 	
 	var next_enemy_type
 	if spawn_state == "normal":
-		if chunk_count < 5:
+		if game_progress < 5:
 			next_enemy_type = 0
-		if chunk_count > 5:
+		if game_progress > 5:
 			next_enemy_type = 1
-		if chunk_count > 10:
+		if game_progress > 10:
 			next_enemy_type = randi_range(1,2)
-		if chunk_count == 20:
+		if game_progress == 20:
 			spawn_state = "boss"
 			next_enemy_type = 100
-		if chunk_count > 5:
+		if game_progress > 20:
 			next_enemy_type = randi_range(1,3)
+		game_progress += 1
 	
-	print(spawn_state)
+	print("spawn state:" + str(spawn_state))
+	print("game progress:" + str(game_progress))
 	
 	if next_chunk_type == 0:
 		$EmtyChunkGenerator.new_emty_chunk()

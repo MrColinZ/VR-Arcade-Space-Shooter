@@ -13,6 +13,8 @@ emission_energy_multiplier = 6.38
 material = SubResource("StandardMaterial3D_l6jyq")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4obyj"]
+radius = 1.41741
+height = 4.26294
 
 [node name="Drop" type="Area3D"]
 collision_layer = 0

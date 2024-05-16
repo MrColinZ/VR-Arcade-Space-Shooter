@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Ship/XROrigin.gd" id="3_3lpgn"]
 [ext_resource type="AudioStream" uid="uid://nhd28vasq82h" path="res://Recources/Soundeffects/sci-fi-energy-gun-39409.mp3" id="3_5r6up"]
 [ext_resource type="Script" path="res://Scripts/SoundRandomPichPlayer.gd" id="4_upq0j"]
-[ext_resource type="PackedScene" uid="uid://oguk22ajx23q" path="res://Recources/3DModel/DuckCup.blend" id="5_4eo22"]
+[ext_resource type="PackedScene" uid="uid://oguk22ajx23q" path="res://Recources/3DModel/DuckCup/DuckCup.blend" id="5_4eo22"]
 [ext_resource type="PackedScene" uid="uid://c03sc8swf0een" path="res://Recources/Arcade Ship.escn" id="6_fnhnm"]
 [ext_resource type="Texture2D" uid="uid://cnv1wr2yd0xg3" path="res://Recources/Textures/ShipTexture.png" id="7_kgaa5"]
 [ext_resource type="AudioStream" uid="uid://blxya6mngkihp" path="res://Recources/Soundeffects/mixkit-blast-hit-with-echo-2186.wav" id="8_2v0aq"]
@@ -20,6 +20,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xti5l"]
 albedo_texture = ExtResource("7_kgaa5")
+roughness = 0.25
 texture_filter = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ccn0n"]

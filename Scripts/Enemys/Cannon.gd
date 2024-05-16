@@ -16,6 +16,7 @@ var cur_shot_count
 func _ready():
 	$ShootTimer.wait_time = shoot_interval
 	$ReloadTimer.wait_time = reload_time
+	await get_tree().create_timer(1).timeout
 	$ReloadTimer.start()
 
 
@@ -29,6 +30,7 @@ func _on_reload_timer_timeout():
 
 
 func _on_shoot_timer_timeout():
+	#making sure the Enemy dont shoot when the Player has past
 	if entity.can_shoot && global_position.z > ship_node.get_node("EnemyAimPoint").global_position.z:
 		var shot = shot_scene.instantiate()
 		shot.position = global_position

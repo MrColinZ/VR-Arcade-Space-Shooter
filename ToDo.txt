@@ -1,14 +1,11 @@
 ToDo:
-	BossEnemy1 3D Modell erstellen
 	neue Gegner erstellen
 		Mienen
-		Bewegender Gegner der gerade schiesst
 		kamikaze gegner
 		gegner mit flächen schüsse(konisch vom gegener ausgehend)
 		gegner mit zielsuchenden geschossen
 		
 	Gegner Schüsse:
-		in der Grösse pulsierend
 		Zielsuchende Raketen
 		
 Biom Ideas:

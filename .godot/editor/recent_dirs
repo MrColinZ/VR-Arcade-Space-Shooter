@@ -1,3 +1,10 @@
+res://Recources/3DModel/Enemy3
+res://Recources/3DModel/Meteroid
+res://Recources/3DModel/BossEnemy1
+res://Recources/Textures
+res://Recources/Materials
+res://Animation
+res://Scripts/ClassScripts
 res://PackedScenes/Enemys
 res://PackedScenes/Shots
 H:/Eigene Games/VR Aracade Space Shooter/Test0.3
@@ -9,12 +16,7 @@ res://Scripts
 res://Recources/3DModel
 res://Scripts/Chunks and Enemyspawner
 H:/Eigene Games/VR Aracade Space Shooter/TestVersion0.2
-res://Recources/Textures
-res://Recources/Materials
 res://Scenes
 H:/Eigene Games/VR Aracade Space Shooter/TestVersion0.1
 res://PackedScenes
-res://Animation
 res://
-res://Recources
-res://PackedScenes/ParentScenes

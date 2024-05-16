@@ -1,21 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://p3fa31lut2b3"]
+[gd_scene load_steps=9 format=3 uid="uid://p3fa31lut2b3"]
 
 [ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_6aaek"]
 [ext_resource type="Script" path="res://Scripts/Enemys/Meteor.gd" id="1_sqfj8"]
-[ext_resource type="PackedScene" uid="uid://6acsobskqhax" path="res://Recources/3DModel/Meteroid.escn" id="3_jfndn"]
-[ext_resource type="Texture2D" uid="uid://2vmng1m18ipm" path="res://Recources/Textures/MeteroidTexture.png" id="4_l6qcj"]
-[ext_resource type="Texture2D" uid="uid://di1u7ih37ws88" path="res://Recources/3DModel/MeteroidTexture_n.png" id="5_05xw1"]
+[ext_resource type="PackedScene" uid="uid://6acsobskqhax" path="res://Recources/3DModel/Meteroid/Meteroid.escn" id="3_wxrf2"]
+[ext_resource type="Texture2D" uid="uid://2vmng1m18ipm" path="res://Recources/3DModel/Meteroid/MeteroidTexture.png" id="4_f18b1"]
+[ext_resource type="Texture2D" uid="uid://di1u7ih37ws88" path="res://Recources/3DModel/Meteroid/MeteroidTexture_n.png" id="5_sen4x"]
+[ext_resource type="PackedScene" uid="uid://fymfew8nds7f" path="res://Recources/3DModel/Meteroid/Meteroid.blend" id="6_68ubp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxgyd"]
-albedo_texture = ExtResource("4_l6qcj")
+albedo_texture = ExtResource("4_f18b1")
 metallic = 0.32
 normal_enabled = true
-normal_texture = ExtResource("5_05xw1")
+normal_texture = ExtResource("5_sen4x")
 rim_tint = 1.0
 ao_light_affect = 0.43
-ao_texture = ExtResource("4_l6qcj")
+ao_texture = ExtResource("4_f18b1")
 heightmap_scale = 2.804
-heightmap_texture = ExtResource("4_l6qcj")
+heightmap_texture = ExtResource("4_f18b1")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji1ht"]
+albedo_texture = ExtResource("4_f18b1")
+roughness = 0.64
+normal_enabled = true
+normal_texture = ExtResource("5_sen4x")
 texture_filter = 2
 
 [node name="Meteor" instance=ExtResource("1_6aaek")]
@@ -27,16 +35,25 @@ points = 2
 can_shoot = false
 
 [node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = null
 
-[node name="Mesh" parent="MeshInstance3D" index="0" instance=ExtResource("3_jfndn")]
+[node name="Mesh" parent="MeshInstance3D" index="0" instance=ExtResource("3_wxrf2")]
 transform = Transform3D(0.365, 0, 0, 0, 0.365, 0, 0, 0, 0.365, 0, 0, 0)
+visible = false
 
 [node name="Meteroid" parent="MeshInstance3D/Mesh" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_nxgyd")
+
+[node name="Meteroid2" parent="MeshInstance3D" index="1" instance=ExtResource("6_68ubp")]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+
+[node name="Meteroid" parent="MeshInstance3D/Meteroid2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ji1ht")
 
 [node name="Cannon" parent="." index="4"]
 visible = false
 script = null
 
 [editable path="MeshInstance3D/Mesh"]
+[editable path="MeshInstance3D/Meteroid2"]

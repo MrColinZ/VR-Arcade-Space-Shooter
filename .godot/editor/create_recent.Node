@@ -1,3 +1,6 @@
+ScalePulse
+EntryAnimation
+AnimationPlayer
 EnemyMovement
 EnemySpawner
 Button
@@ -8,7 +11,5 @@ Area3D
 MeshInstance3D
 Marker3D
 Camera3D
-AnimationPlayer
 Timer
 Label3D
-AnimatedSprite3D

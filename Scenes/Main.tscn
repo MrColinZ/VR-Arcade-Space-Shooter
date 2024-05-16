@@ -16,19 +16,17 @@
 [ext_resource type="PackedScene" uid="uid://e3bo7qvxy5ww" path="res://PackedScenes/Enemys/boss_enemy_1.tscn" id="13_tdlng"]
 [ext_resource type="Script" path="res://Scripts/ScoreManager.gd" id="14_awcq8"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bh8t"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3ntw"]
 panorama = ExtResource("6_41ej3")
 
 [sub_resource type="Sky" id="Sky_ahdk3"]
-sky_material = SubResource("PanoramaSkyMaterial_6bh8t")
+sky_material = SubResource("PanoramaSkyMaterial_t3ntw")
 
 [sub_resource type="Environment" id="Environment_egf7b"]
 background_mode = 2
-background_energy_multiplier = 0.66
 sky = SubResource("Sky_ahdk3")
 ambient_light_source = 2
-ambient_light_color = Color(0.631373, 0.615686, 0.584314, 1)
-ambient_light_energy = 0.85
+ambient_light_color = Color(0.356863, 0.352941, 0.32549, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_onfnt")
@@ -36,6 +34,12 @@ script = ExtResource("1_onfnt")
 [node name="Ship" parent="." instance=ExtResource("1_pklpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 0)
 start_move_speed = 40
+
+[node name="DuckCup" parent="Ship/Mesh/Cube" index="0"]
+transform = Transform3D(-0.0575958, 0, 0.191527, 0, 0.2, 0, -0.191527, 0, -0.0575958, 0.321405, 0.774216, 0.818115)
+
+[node name="Cup" parent="Ship/Mesh/Cube/DuckCup" index="0"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
 
 [node name="XRCamera3D" parent="Ship/XROrigin3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03899, 0.00950491)
@@ -160,3 +164,4 @@ autostart = true
 
 [editable path="Ship"]
 [editable path="Ship/Mesh"]
+[editable path="Ship/Mesh/Cube/DuckCup"]

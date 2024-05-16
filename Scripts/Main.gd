@@ -65,7 +65,6 @@ func _on_start_button_pressed(): #Start Button to Start new Game
 
 
 func _on_right_hand_button_pressed(input_name):
-	print(input_name)
 	if input_name == "ax_button" && game_state == "Menu":
 		new_game()
 	

@@ -1,0 +1,39 @@
+[gd_resource type="VisualShader" load_steps=4 format=3 uid="uid://cx05qbb6g2lgq"]
+
+[ext_resource type="Texture2D" uid="uid://v2kqx0vuom2b" path="res://Recources/Textures/panorama_image.png" id="1_0hh7u"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wnxf5"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_sg5cj"]
+texture = ExtResource("1_0hh7u")
+texture_type = 1
+
+[resource]
+code = "shader_type sky;
+uniform sampler2D tex_sky_4 : source_color;
+
+
+
+void sky() {
+// Texture2D:4
+	vec4 n_out4p0 = texture(tex_sky_4, vec2(0.0));
+
+
+// Output:0
+	COLOR = vec3(n_out4p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-204.203, -16.9387)
+mode = 3
+flags/use_half_res_pass = false
+flags/use_quarter_res_pass = false
+flags/disable_fog = false
+flags/use_debanding = false
+nodes/sky/2/node = SubResource("VisualShaderNodeInput_wnxf5")
+nodes/sky/2/position = Vector2(-220, 100)
+nodes/sky/4/node = SubResource("VisualShaderNodeTexture_sg5cj")
+nodes/sky/4/position = Vector2(140, 40)
+nodes/sky/connections = PackedInt32Array(4, 0, 0, 0)

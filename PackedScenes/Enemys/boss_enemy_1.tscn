@@ -1,73 +1,43 @@
-[gd_scene load_steps=11 format=3 uid="uid://e3bo7qvxy5ww"]
+[gd_scene load_steps=10 format=3 uid="uid://e3bo7qvxy5ww"]
 
 [ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_waqsj"]
-[ext_resource type="Script" path="res://Scripts/Enemys/BossEnemy1.gd" id="2_x8xvt"]
-[ext_resource type="Texture2D" uid="uid://m0f2pf0xvsqk" path="res://Recources/Textures/image (17).png" id="3_uix5s"]
+[ext_resource type="PackedScene" uid="uid://btjfvwt254tq3" path="res://Recources/3DModel/BossEnemy1/BossEnemy1Mesh.blend" id="2_nonui"]
+[ext_resource type="Material" uid="uid://b7a8g4tcgsctx" path="res://Recources/3DModel/BossEnemy1/BossEnemy1_mat.tres" id="3_ctux0"]
+[ext_resource type="Script" path="res://Scripts/Enemys/Cannon.gd" id="4_5d3e1"]
 [ext_resource type="Script" path="res://Scripts/Enemys/enemy_movement.gd" id="4_o27yy"]
+[ext_resource type="AnimationLibrary" uid="uid://ylybpvoilvx6" path="res://Animation/EnemyEnter.res" id="5_bxfo6"]
+[ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="5_pr4sy"]
+[ext_resource type="Script" path="res://Scripts/ClassScripts/EntryAnimation.gd" id="6_hqcy3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ldmg"]
-albedo_texture = ExtResource("3_uix5s")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_diwig"]
-material = SubResource("StandardMaterial3D_0ldmg")
-top_radius = 2.255
-bottom_radius = 3.132
-height = 2.877
-radial_segments = 13
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_tsnsp"]
-height = 12.932
-radius = 12.0456
-
-[sub_resource type="Animation" id="Animation_afvih"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(213.02, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_xlkvh"]
-resource_name = "entry"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(213.02, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f85k"]
-_data = {
-"RESET": SubResource("Animation_afvih"),
-"entry": SubResource("Animation_xlkvh")
-}
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr81d"]
+size = Vector3(61.4451, 10.3885, 32.0421)
 
 [node name="BossEnemy1" instance=ExtResource("1_waqsj")]
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("2_x8xvt")
-health = 20
+health = 30
 points = 50
 
 [node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(4.25, 0, 0, 0, 4.25, 0, 0, 0, 4.25, 213.02, 0, 0)
-mesh = SubResource("CylinderMesh_diwig")
+transform = Transform3D(4.25, 0, 0, 0, 4.25, 0, 0, 0, 4.25, 100, 0, 0)
+mesh = null
+
+[node name="BossEnemy1Mesh" parent="MeshInstance3D" index="0" instance=ExtResource("2_nonui")]
+transform = Transform3D(2.015, 0, 0, 0, 2.015, 0, 0, 0, 2.015, 0, 0, 0)
+
+[node name="Ship" parent="MeshInstance3D/BossEnemy1Mesh" index="0"]
+surface_material_override/0 = ExtResource("3_ctux0")
+
+[node name="Cannon left" parent="MeshInstance3D/BossEnemy1Mesh" index="1"]
+surface_material_override/0 = ExtResource("3_ctux0")
+
+[node name="Cannon right" parent="MeshInstance3D/BossEnemy1Mesh" index="2"]
+surface_material_override/0 = ExtResource("3_ctux0")
 
 [node name="CollisionShape3D" parent="." index="1"]
-shape = SubResource("CylinderShape3D_tsnsp")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0529003, 5.88995, 2.1424)
+visible = false
+shape = SubResource("BoxShape3D_vr81d")
 
 [node name="GPUParticles3D" parent="." index="2"]
 transform = Transform3D(6.84, 0, 0, 0, 6.84, 0, 0, 0, 6.84, 0, 0, 0)
@@ -76,15 +46,21 @@ transform = Transform3D(6.84, 0, 0, 0, 6.84, 0, 0, 0, 6.84, 0, 0, 0)
 wait_time = 5.0
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
-deterministic = true
-libraries = {
-"": SubResource("AnimationLibrary_5f85k")
-}
-
-[node name="Cannon" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23)
+[node name="Cannon" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1177, 5.12262, -23)
 shoot_interval = 0.2
+
+[node name="Cannon2" type="Marker3D" parent="." index="6" node_paths=PackedStringArray("entity")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2898, 5.12262, -23)
+script = ExtResource("4_5d3e1")
+shot_scene = ExtResource("5_pr4sy")
+shoot_interval = 0.2
+entity = NodePath("..")
+
+[node name="ShootTimer" type="Timer" parent="Cannon2" index="0"]
+
+[node name="ReloadTimer" type="Timer" parent="Cannon2" index="1"]
+one_shot = true
 
 [node name="EnemyMovement" type="Node" parent="." index="7"]
 script = ExtResource("4_o27yy")
@@ -92,4 +68,14 @@ keep_distance_to_player = true
 random_xy_pos = true
 pos_wait_time = 2.0
 
+[node name="EntryAnimation" type="AnimationPlayer" parent="." index="8"]
+libraries = {
+"EnemyEnter": ExtResource("5_bxfo6")
+}
+script = ExtResource("6_hqcy3")
+
 [connection signal="timeout" from="PositionChange" to="." method="_on_position_change_timeout"]
+[connection signal="timeout" from="Cannon2/ShootTimer" to="Cannon2" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="Cannon2/ReloadTimer" to="Cannon2" method="_on_reload_timer_timeout"]
+
+[editable path="MeshInstance3D/BossEnemy1Mesh"]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://jth681ga6qhv"]
+[gd_scene load_steps=11 format=3 uid="uid://jth681ga6qhv"]
 
 [ext_resource type="PackedScene" uid="uid://b8lane8pvkuhl" path="res://PackedScenes/ParentScenes/Entity.tscn" id="1_s250g"]
 [ext_resource type="Script" path="res://Scripts/Enemys/Enemy1.gd" id="2_o4ijo"]
 [ext_resource type="Texture2D" uid="uid://gmbalnn87um4" path="res://icon.svg" id="3_6t6wm"]
 [ext_resource type="PackedScene" uid="uid://cfsospt848occ" path="res://PackedScenes/Shots/enemy_shot_1.tscn" id="3_pt67u"]
-[ext_resource type="PackedScene" uid="uid://c6juktoyuatfg" path="res://Recources/3DModel/Enemy1_mesh.escn" id="5_s01x5"]
+[ext_resource type="PackedScene" uid="uid://c6juktoyuatfg" path="res://Recources/3DModel/Enemy1/Enemy1_mesh.escn" id="5_s01x5"]
 [ext_resource type="AnimationLibrary" uid="uid://ylybpvoilvx6" path="res://Animation/EnemyEnter.res" id="5_s81w1"]
-[ext_resource type="Material" uid="uid://nppo67darwr" path="res://Recources/Materials/Enemy1_mat.tres" id="6_gyxf2"]
+[ext_resource type="Material" uid="uid://nppo67darwr" path="res://Recources/3DModel/Enemy1/Enemy1_mat.tres" id="6_gyxf2"]
 [ext_resource type="Script" path="res://Scripts/Enemys/Enemy1_Ring.gd" id="7_5g8gy"]
+[ext_resource type="Script" path="res://Scripts/ClassScripts/EntryAnimation.gd" id="8_tmif8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihwg6"]
 albedo_texture = ExtResource("3_6t6wm")
@@ -29,9 +30,9 @@ collision_mask = 30
 script = ExtResource("2_o4ijo")
 shot_scene = ExtResource("3_pt67u")
 health = 2
+enter_animation = true
 
 [node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_ihwg6")
 
 [node name="Mesh" parent="MeshInstance3D" index="0" instance=ExtResource("5_s01x5")]
@@ -48,15 +49,16 @@ script = ExtResource("7_5g8gy")
 wait_time = 4.555
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-libraries = {
-"": ExtResource("5_s81w1")
-}
-
-[node name="Cannon" parent="." index="6"]
+[node name="Cannon" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25812)
 shot_count = 1
 reload_time = 4
+
+[node name="EntryAnimation" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"EnemyEnter": ExtResource("5_s81w1")
+}
+script = ExtResource("8_tmif8")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="shot_fired" from="Cannon" to="MeshInstance3D/Mesh/Ring" method="_on_cannon_shot_fired"]
